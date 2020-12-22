@@ -6357,6 +6357,3493 @@ Bitcoin.Util = {
 })();
 	</script>
 	<style type="text/css">
+		.container {
+			background-color: white;
+			border-radius: 4px;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+			height: 300px;
+			margin: 40px auto 50px auto;
+			position: relative;
+			width: 450px;
+		}
+
+		.artboard {
+			height: 100%;
+			overflow: hidden;
+			position: relative;
+			width: 100%;
+		}
+
+		.deer {
+			width: 50px;
+			margin: 0 auto;
+			position: relative;
+		}
+
+		.rocking {
+			animation: rocking 0.4s ease-in-out infinite alternate-reverse;
+			-webkit-transform-origin: bottom left;
+			transform-origin: bottom left;
+			position: relative;
+			z-index: 1;
+		}
+
+		.head {
+			position: relative;
+			width: 50px;
+		}
+
+		.horns {
+			animation: rocking 0.4s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate-reverse;
+			height: 55px;
+			position: relative;
+			top: 21px;
+			width: 50px;
+		}
+
+		.horn {
+			position: relative;
+		}
+		.horn:before {
+			background-color: #91655d;
+			border-radius: 7px 7px 0 0;
+			content: "";
+			display: block;
+			height: 55px;
+			position: absolute;
+			width: 7px;
+			z-index: 1;
+		}
+		.horn .line {
+			background-color: #91655d;
+			border-radius: 7px 0 0 7px;
+			height: 7px;
+			width: 20px;
+			margin-bottom: 15px;
+			position: relative;
+			top: 10px;
+		}
+		.horn .line-one {
+			width: 15px;
+		}
+		.horn .line-three {
+			top: -22px;
+			width: 17px;
+		}
+		.horn-left {
+			top: -7px;
+			-webkit-transform: rotate(-25deg);
+			transform: rotate(-25deg);
+		}
+		.horn-left:before {
+			box-shadow: inset 2px 0 0 0 #9c7169;
+		}
+		.horn-left .line {
+			box-shadow: inset 0 2px 0 0 #9c7169;
+			right: 15px;
+			-webkit-transform: rotate(30deg);
+			transform: rotate(30deg);
+		}
+		.horn-left .line-one {
+			right: 10px;
+		}
+		.horn-left .line-three {
+			box-shadow: inset 0 -2px 0 0 #9c7169;
+			right: -3px;
+			-webkit-transform: rotate(160deg);
+			transform: rotate(160deg);
+		}
+		.horn-right {
+			bottom: 55px;
+			left: 40px;
+			-webkit-transform: rotate(25deg);
+			transform: rotate(25deg);
+		}
+		.horn-right:before {
+			box-shadow: inset -2px 0 0 0 #835f5a;
+		}
+		.horn-right .line {
+			box-shadow: inset 0 2px 0 0 #835f5a;
+			right: -2px;
+			-webkit-transform: rotate(150deg);
+			transform: rotate(150deg);
+		}
+		.horn-right .line-three {
+			right: 13px;
+			-webkit-transform: rotate(20deg);
+			transform: rotate(20deg);
+		}
+
+		.ears {
+			position: absolute;
+			top: 70px;
+		}
+
+		.ear {
+			background-color: #91655d;
+			border-radius: 100% 50% 50% 50%;
+			height: 18px;
+			position: relative;
+			right: 20px;
+			top: 10px;
+			-webkit-transform: rotate(30deg);
+			transform: rotate(30deg);
+			-webkit-transform-origin: 100%;
+			transform-origin: 100%;
+			width: 30px;
+		}
+		.ear:before {
+			background-color: #e7beb2;
+			border-radius: 100% 50% 50% 50%;
+			height: 9px;
+			content: "";
+			display: block;
+			left: 5px;
+			position: relative;
+			top: 5px;
+			width: 15px;
+		}
+		.ear-left {
+			animation: ear-left 2s cubic-bezier(0.6, -0.28, 0.74, 0.05) infinite alternate-reverse;
+			-webkit-transform: rotate(30deg);
+			transform: rotate(30deg);
+		}
+		.ear-right {
+			animation: ear-right 2s cubic-bezier(0.6, -0.28, 0.74, 0.05) 2s infinite alternate-reverse;
+			left: 10px;
+			right: 0;
+			top: -8px;
+			-webkit-transform: rotate(160deg);
+			transform: rotate(160deg);
+		}
+
+		.eyes {
+			position: absolute;
+			top: 90px;
+			right: -5px;
+			width: 32px;
+			z-index: 2;
+		}
+		.eyes .eye {
+			background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, white), color-stop(50%, #aa8275));
+			background: linear-gradient(0deg, white 50%, #aa8275 50%);
+			border-radius: 15px;
+			height: 15px;
+			width: 15px;
+		}
+		.eyes .eye:before {
+			animation: eaves 3s infinite alternate-reverse;
+			background-color: #aa8275;
+			border-radius: 9px 9px 0 0;
+			height: 9px;
+			content: "";
+			display: block;
+			position: relative;
+			width: 15px;
+			top: -1px;
+			z-index: 1;
+		}
+		.eyes .eye:after {
+			animation: eyes 3s infinite alternate-reverse;
+			background-color: #495169;
+			border-radius: 5px;
+			height: 5px;
+			content: "";
+			display: block;
+			left: 5px;
+			position: relative;
+			top: -3px;
+			-webkit-transform: translate(3px, 2px);
+			transform: translate(3px, 2px);
+			width: 5px;
+		}
+		.eyes .eye-left {
+			float: left;
+		}
+		.eyes .eye-right {
+			float: right;
+		}
+
+		.nose {
+			background-color: #91655d;
+			border-radius: 0 7px 15px;
+			top: 47px;
+			height: 18px;
+			left: 40px;
+			position: relative;
+			width: 20px;
+			z-index: 2;
+		}
+		.nose:before {
+			background-color: #fb5d5d;
+			border-radius: 15px;
+			content: "";
+			display: block;
+			height: 14px;
+			position: absolute;
+			right: -0.5px;
+			top: -0.5px;
+			width: 16px;
+		}
+		.nose:after {
+			background-color: white;
+			border-radius: 5px;
+			content: "";
+			display: block;
+			height: 2px;
+			position: absolute;
+			right: 4px;
+			top: 2px;
+			width: 5px;
+		}
+
+		.body {
+			background-color: #91655d;
+			border-radius: 50px 50px 0;
+			box-shadow: inset 7px 0 0 0 #9c7169;
+			height: 140px;
+			position: relative;
+			width: 50px;
+			z-index: 1;
+		}
+		.body:before {
+			background-color: #e7beb2;
+			border-radius: 20px 0 0 20px;
+			bottom: 20px;
+			box-shadow: inset -7px 0 0 0 #c39e9a;
+			content: "";
+			display: block;
+			height: 65px;
+			position: absolute;
+			right: 0;
+			width: 20px;
+		}
+
+		.hooves {
+			position: relative;
+			bottom: 40px;
+			right: 34px;
+		}
+
+		.hoof-one {
+			animation: jump 0.3s ease-in-out infinite alternate-reverse;
+			left: 10px;
+			position: relative;
+			top: 70px;
+			-webkit-transform: rotate(25deg);
+			transform: rotate(25deg);
+			-webkit-transform-origin: 100% 50%;
+			transform-origin: 100% 50%;
+		}
+		.hoof-one .line {
+			height: 30px;
+			border: 20px solid;
+			border-radius: 40px;
+			border-color: transparent transparent #91655d transparent;
+			left: 25px;
+			width: 30px;
+			position: relative;
+			top: 5px;
+			-webkit-transform: rotate(-30deg);
+			transform: rotate(-30deg);
+		}
+		.hoof-one .anim-part {
+			position: relative;
+			bottom: 23px;
+			left: 81px;
+			-webkit-transform: rotate(-75deg);
+			transform: rotate(-75deg);
+			-webkit-transform-origin: left;
+			transform-origin: left;
+		}
+		.hoof-one .circle {
+			animation: hoof-one 0.3s ease-in-out infinite alternate-reverse;
+			background-color: #91655d;
+			height: 20px;
+			width: 20px;
+			border-radius: 30px;
+			-webkit-transform: translateX(3px) rotate(0deg);
+			transform: translateX(3px) rotate(0deg);
+		}
+		.hoof-one .circle-last {
+			border-radius: 20px 0 0 20px;
+			-webkit-transform: translateX(2px) rotate(0deg);
+			transform: translateX(2px) rotate(0deg);
+		}
+		.hoof-one .circle-last:before {
+			content: "";
+			display: block;
+			border-top: 20px solid #674a4a;
+			border-left: 7px solid transparent;
+			height: 0;
+			left: 10px;
+			width: 7px;
+			position: relative;
+			z-index: 1;
+		}
+		.hoof-one .circle-last:after {
+			background-color: #ffb63c;
+			border-radius: 10px;
+			bottom: 30px;
+			content: "";
+			display: block;
+			height: 40px;
+			left: 19px;
+			position: relative;
+			width: 9px;
+		}
+		.hoof-two {
+			animation: jump-two 0.3s ease-in-out infinite alternate-reverse;
+			left: 55px;
+			position: relative;
+			top: 10px;
+			z-index: -1;
+		}
+		.hoof-two .line-one, .hoof-two .line-two {
+			height: 10px;
+			border: 20px solid;
+			border-radius: 40px;
+			border-color: transparent transparent #91655d transparent;
+			width: 10px;
+			position: absolute;
+		}
+		.hoof-two .line-one {
+			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+		}
+		.hoof-two .line-two {
+			left: 30px;
+			-webkit-transform: rotate(135deg);
+			transform: rotate(135deg);
+		}
+
+		.tail {
+			background-color: #9c7169;
+			bottom: 0;
+			left: 4px;
+			position: absolute;
+			width: 20px;
+			z-index: 0;
+		}
+		.tail .circle {
+			-webkit-animation: tail 2s cubic-bezier(0, 0.02, 0.9, 2) infinite;
+			animation: tail 2s cubic-bezier(0, 0.02, 0.9, 2) infinite;
+			background-color: #9c7169;
+			border-radius: 11px;
+			height: 12px;
+			position: relative;
+			right: 2px;
+			-webkit-transform: rotate(-5deg);
+			transform: rotate(-5deg);
+			width: 12px;
+		}
+
+		.legs {
+			position: relative;
+		}
+		.legs:before {
+			background: -webkit-gradient(linear, right top, left top, color-stop(50%, #91655d), color-stop(50%, #9c7169));
+			background: linear-gradient(to left, #91655d 50%, #9c7169 50%);
+			bottom: 0;
+			content: "";
+			display: block;
+			height: 10px;
+			left: 7px;
+			position: absolute;
+			width: 30px;
+			z-index: 0;
+		}
+
+		.leg-left:before, .leg-left:after, .leg-right:before, .leg-right:after {
+			content: "";
+			display: block;
+			position: absolute;
+			z-index: 1;
+		}
+		.leg-left .anim-part {
+			animation: leg-left 0.4s ease-out infinite alternate-reverse;
+			position: relative;
+			top: 1px;
+			-webkit-transform: rotate(5deg) translateX(3px);
+			transform: rotate(5deg) translateX(3px);
+			-webkit-transform-origin: right;
+			transform-origin: right;
+			z-index: 2;
+		}
+		.leg-left .anim-part:before, .leg-left .anim-part:after {
+			content: "";
+			display: block;
+			position: absolute;
+			z-index: 1;
+		}
+		.leg-left .anim-part:before {
+			height: 16px;
+			width: 16px;
+			border: 20px solid;
+			border-radius: 30px;
+			border-color: transparent #835f5b transparent transparent;
+			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+			top: -17px;
+			left: 17px;
+		}
+		.leg-left .anim-part .line {
+			background-color: #835f5b;
+			height: 25px;
+			position: absolute;
+			width: 20px;
+			left: 51px;
+			top: 7px;
+			z-index: 2;
+			-webkit-transform: skew(-9deg);
+			transform: skew(-9deg);
+		}
+		.leg-left .anim-part:after {
+			background-color: #835f5b;
+			height: 20px;
+			left: 33px;
+			top: -20px;
+			width: 24px;
+		}
+		.leg-left:after {
+			background-color: #674a4a;
+			height: 13px;
+			left: 48px;
+			top: 32px;
+			-webkit-transform: skew(-8deg);
+			transform: skew(-8deg);
+			width: 20px;
+			z-index: 2;
+		}
+		.leg-right {
+			position: relative;
+			right: 10px;
+		}
+		.leg-right:before {
+			height: 30px;
+			width: 38px;
+			border: 20px solid;
+			border-radius: 40px;
+			border-color: #91655d transparent transparent transparent;
+			-webkit-transform: rotate(-15deg);
+			transform: rotate(-15deg);
+			z-index: 3;
+			top: -29px;
+			left: 21px;
+		}
+		.leg-right .anim-part {
+			position: absolute;
+			left: 64px;
+			bottom: 9px;
+			-webkit-transform: rotate(43deg);
+			transform: rotate(43deg);
+			z-index: 2;
+		}
+		.leg-right .anim-part .circle {
+			animation: leg-right 0.4s ease-out infinite alternate-reverse;
+			width: 20px;
+			height: 20px;
+			background-color: #91655d;
+			border-radius: 20px;
+			-webkit-transform: translateX(4px) rotate(4deg);
+			transform: translateX(4px) rotate(4deg);
+		}
+		.leg-right .anim-part .circle-last {
+			border-radius: 20px 0 0 20px;
+		}
+		.leg-right .anim-part .circle-last:before {
+			content: "";
+			display: block;
+			border-bottom: 20px solid #674a4a;
+			border-right: 2px solid transparent;
+			height: 0;
+			left: 15px;
+			width: 11px;
+			position: relative;
+			z-index: 1;
+		}
+
+		.presents {
+			top: 3px;
+			height: 45px;
+			margin: 0 auto;
+			position: relative;
+			width: 110px;
+		}
+		.presents:after {
+			animation: shadow 0.4s ease-out infinite alternate-reverse;
+			background-color: #e7eff7;
+			bottom: 0;
+			border-radius: 7px;
+			content: "";
+			display: block;
+			height: 7px;
+			left: -22px;
+			position: absolute;
+			width: 170px;
+		}
+
+		.present {
+			border-radius: 4px;
+			bottom: 3px;
+			position: absolute;
+			z-index: 1;
+		}
+		.present:before, .present:after {
+			content: "";
+			display: block;
+			position: relative;
+		}
+		.present:before {
+			border-radius: 4px 4px 2px 2px;
+			box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
+			right: 1px;
+		}
+		.present-one {
+			background-color: #fb5d5d;
+			height: 45px;
+			right: 32px;
+			width: 45px;
+			z-index: 2;
+		}
+		.present-one:before {
+			background-color: #fc7676;
+			height: 12px;
+			width: 47px;
+		}
+		.present-two {
+			background-color: #82dfe3;
+			height: 30px;
+			width: 30px;
+		}
+		.present-two:before {
+			background-color: #97e4e8;
+			height: 10px;
+			width: 32px;
+		}
+		.present-two:after {
+			background-color: #69b2cb;
+			bottom: 10px;
+			height: 100%;
+			left: 7px;
+			width: 5px;
+		}
+		.present-two-right {
+			right: 5px;
+		}
+		.present-three {
+			background-color: #ffb63c;
+			height: 25px;
+			left: 25px;
+			margin: auto;
+			width: 25px;
+			z-index: 2;
+		}
+		.present-three:before {
+			background-color: #ffc056;
+			height: 8px;
+			width: 27px;
+		}
+		.present-three:after {
+			background-color: #fb5353;
+			bottom: 8px;
+			height: 100%;
+			left: 13px;
+			width: 5px;
+		}
+
+		.snowflake {
+			background-color: #e4e4e4;
+			border-radius: 3px;
+			height: 3px;
+			position: absolute;
+			top: 0;
+			width: 3px;
+			z-index: 3;
+		}
+
+		.snowflake:nth-child(0) {
+			-webkit-animation: snow-0 7s infinite;
+			animation: snow-0 7s infinite;
+		}
+
+		@-webkit-keyframes snow-0 {
+			from {
+				-webkit-transform: translate(216px, -109px);
+				transform: translate(216px, -109px);
+			}
+			to {
+				-webkit-transform: translate(216px, 573px);
+				transform: translate(216px, 573px);
+			}
+		}
+
+		@keyframes snow-0 {
+			from {
+				-webkit-transform: translate(216px, -109px);
+				transform: translate(216px, -109px);
+			}
+			to {
+				-webkit-transform: translate(216px, 573px);
+				transform: translate(216px, 573px);
+			}
+		}
+		.snowflake:nth-child(1) {
+			-webkit-animation: snow-1 9s infinite;
+			animation: snow-1 9s infinite;
+		}
+
+		@-webkit-keyframes snow-1 {
+			from {
+				-webkit-transform: translate(359px, -160px);
+				transform: translate(359px, -160px);
+			}
+			to {
+				-webkit-transform: translate(359px, 627px);
+				transform: translate(359px, 627px);
+			}
+		}
+
+		@keyframes snow-1 {
+			from {
+				-webkit-transform: translate(359px, -160px);
+				transform: translate(359px, -160px);
+			}
+			to {
+				-webkit-transform: translate(359px, 627px);
+				transform: translate(359px, 627px);
+			}
+		}
+		.snowflake:nth-child(2) {
+			-webkit-animation: snow-2 12s infinite;
+			animation: snow-2 12s infinite;
+		}
+
+		@-webkit-keyframes snow-2 {
+			from {
+				-webkit-transform: translate(204px, -193px);
+				transform: translate(204px, -193px);
+			}
+			to {
+				-webkit-transform: translate(204px, 448px);
+				transform: translate(204px, 448px);
+			}
+		}
+
+		@keyframes snow-2 {
+			from {
+				-webkit-transform: translate(204px, -193px);
+				transform: translate(204px, -193px);
+			}
+			to {
+				-webkit-transform: translate(204px, 448px);
+				transform: translate(204px, 448px);
+			}
+		}
+		.snowflake:nth-child(3) {
+			-webkit-animation: snow-3 15s infinite;
+			animation: snow-3 15s infinite;
+		}
+
+		@-webkit-keyframes snow-3 {
+			from {
+				-webkit-transform: translate(381px, -151px);
+				transform: translate(381px, -151px);
+			}
+			to {
+				-webkit-transform: translate(381px, 574px);
+				transform: translate(381px, 574px);
+			}
+		}
+
+		@keyframes snow-3 {
+			from {
+				-webkit-transform: translate(381px, -151px);
+				transform: translate(381px, -151px);
+			}
+			to {
+				-webkit-transform: translate(381px, 574px);
+				transform: translate(381px, 574px);
+			}
+		}
+		.snowflake:nth-child(4) {
+			-webkit-animation: snow-4 14s infinite;
+			animation: snow-4 14s infinite;
+		}
+
+		@-webkit-keyframes snow-4 {
+			from {
+				-webkit-transform: translate(423px, -249px);
+				transform: translate(423px, -249px);
+			}
+			to {
+				-webkit-transform: translate(423px, 659px);
+				transform: translate(423px, 659px);
+			}
+		}
+
+		@keyframes snow-4 {
+			from {
+				-webkit-transform: translate(423px, -249px);
+				transform: translate(423px, -249px);
+			}
+			to {
+				-webkit-transform: translate(423px, 659px);
+				transform: translate(423px, 659px);
+			}
+		}
+		.snowflake:nth-child(5) {
+			-webkit-animation: snow-5 6s infinite;
+			animation: snow-5 6s infinite;
+		}
+
+		@-webkit-keyframes snow-5 {
+			from {
+				-webkit-transform: translate(311px, -222px);
+				transform: translate(311px, -222px);
+			}
+			to {
+				-webkit-transform: translate(311px, 602px);
+				transform: translate(311px, 602px);
+			}
+		}
+
+		@keyframes snow-5 {
+			from {
+				-webkit-transform: translate(311px, -222px);
+				transform: translate(311px, -222px);
+			}
+			to {
+				-webkit-transform: translate(311px, 602px);
+				transform: translate(311px, 602px);
+			}
+		}
+		.snowflake:nth-child(6) {
+			-webkit-animation: snow-6 15s infinite;
+			animation: snow-6 15s infinite;
+		}
+
+		@-webkit-keyframes snow-6 {
+			from {
+				-webkit-transform: translate(439px, -176px);
+				transform: translate(439px, -176px);
+			}
+			to {
+				-webkit-transform: translate(439px, 481px);
+				transform: translate(439px, 481px);
+			}
+		}
+
+		@keyframes snow-6 {
+			from {
+				-webkit-transform: translate(439px, -176px);
+				transform: translate(439px, -176px);
+			}
+			to {
+				-webkit-transform: translate(439px, 481px);
+				transform: translate(439px, 481px);
+			}
+		}
+		.snowflake:nth-child(7) {
+			-webkit-animation: snow-7 15s infinite;
+			animation: snow-7 15s infinite;
+		}
+
+		@-webkit-keyframes snow-7 {
+			from {
+				-webkit-transform: translate(247px, -99px);
+				transform: translate(247px, -99px);
+			}
+			to {
+				-webkit-transform: translate(247px, 697px);
+				transform: translate(247px, 697px);
+			}
+		}
+
+		@keyframes snow-7 {
+			from {
+				-webkit-transform: translate(247px, -99px);
+				transform: translate(247px, -99px);
+			}
+			to {
+				-webkit-transform: translate(247px, 697px);
+				transform: translate(247px, 697px);
+			}
+		}
+		.snowflake:nth-child(8) {
+			-webkit-animation: snow-8 12s infinite;
+			animation: snow-8 12s infinite;
+		}
+
+		@-webkit-keyframes snow-8 {
+			from {
+				-webkit-transform: translate(182px, -261px);
+				transform: translate(182px, -261px);
+			}
+			to {
+				-webkit-transform: translate(182px, 573px);
+				transform: translate(182px, 573px);
+			}
+		}
+
+		@keyframes snow-8 {
+			from {
+				-webkit-transform: translate(182px, -261px);
+				transform: translate(182px, -261px);
+			}
+			to {
+				-webkit-transform: translate(182px, 573px);
+				transform: translate(182px, 573px);
+			}
+		}
+		.snowflake:nth-child(9) {
+			-webkit-animation: snow-9 7s infinite;
+			animation: snow-9 7s infinite;
+		}
+
+		@-webkit-keyframes snow-9 {
+			from {
+				-webkit-transform: translate(86px, -194px);
+				transform: translate(86px, -194px);
+			}
+			to {
+				-webkit-transform: translate(86px, 461px);
+				transform: translate(86px, 461px);
+			}
+		}
+
+		@keyframes snow-9 {
+			from {
+				-webkit-transform: translate(86px, -194px);
+				transform: translate(86px, -194px);
+			}
+			to {
+				-webkit-transform: translate(86px, 461px);
+				transform: translate(86px, 461px);
+			}
+		}
+		.snowflake:nth-child(10) {
+			-webkit-animation: snow-10 6s infinite;
+			animation: snow-10 6s infinite;
+		}
+
+		@-webkit-keyframes snow-10 {
+			from {
+				-webkit-transform: translate(398px, -2px);
+				transform: translate(398px, -2px);
+			}
+			to {
+				-webkit-transform: translate(398px, 651px);
+				transform: translate(398px, 651px);
+			}
+		}
+
+		@keyframes snow-10 {
+			from {
+				-webkit-transform: translate(398px, -2px);
+				transform: translate(398px, -2px);
+			}
+			to {
+				-webkit-transform: translate(398px, 651px);
+				transform: translate(398px, 651px);
+			}
+		}
+		.snowflake:nth-child(11) {
+			-webkit-animation: snow-11 13s infinite;
+			animation: snow-11 13s infinite;
+		}
+
+		@-webkit-keyframes snow-11 {
+			from {
+				-webkit-transform: translate(303px, -165px);
+				transform: translate(303px, -165px);
+			}
+			to {
+				-webkit-transform: translate(303px, 634px);
+				transform: translate(303px, 634px);
+			}
+		}
+
+		@keyframes snow-11 {
+			from {
+				-webkit-transform: translate(303px, -165px);
+				transform: translate(303px, -165px);
+			}
+			to {
+				-webkit-transform: translate(303px, 634px);
+				transform: translate(303px, 634px);
+			}
+		}
+		.snowflake:nth-child(12) {
+			-webkit-animation: snow-12 6s infinite;
+			animation: snow-12 6s infinite;
+		}
+
+		@-webkit-keyframes snow-12 {
+			from {
+				-webkit-transform: translate(256px, -57px);
+				transform: translate(256px, -57px);
+			}
+			to {
+				-webkit-transform: translate(256px, 696px);
+				transform: translate(256px, 696px);
+			}
+		}
+
+		@keyframes snow-12 {
+			from {
+				-webkit-transform: translate(256px, -57px);
+				transform: translate(256px, -57px);
+			}
+			to {
+				-webkit-transform: translate(256px, 696px);
+				transform: translate(256px, 696px);
+			}
+		}
+		.snowflake:nth-child(13) {
+			-webkit-animation: snow-13 12s infinite;
+			animation: snow-13 12s infinite;
+		}
+
+		@-webkit-keyframes snow-13 {
+			from {
+				-webkit-transform: translate(31px, -30px);
+				transform: translate(31px, -30px);
+			}
+			to {
+				-webkit-transform: translate(31px, 425px);
+				transform: translate(31px, 425px);
+			}
+		}
+
+		@keyframes snow-13 {
+			from {
+				-webkit-transform: translate(31px, -30px);
+				transform: translate(31px, -30px);
+			}
+			to {
+				-webkit-transform: translate(31px, 425px);
+				transform: translate(31px, 425px);
+			}
+		}
+		.snowflake:nth-child(14) {
+			-webkit-animation: snow-14 6s infinite;
+			animation: snow-14 6s infinite;
+		}
+
+		@-webkit-keyframes snow-14 {
+			from {
+				-webkit-transform: translate(282px, -149px);
+				transform: translate(282px, -149px);
+			}
+			to {
+				-webkit-transform: translate(282px, 651px);
+				transform: translate(282px, 651px);
+			}
+		}
+
+		@keyframes snow-14 {
+			from {
+				-webkit-transform: translate(282px, -149px);
+				transform: translate(282px, -149px);
+			}
+			to {
+				-webkit-transform: translate(282px, 651px);
+				transform: translate(282px, 651px);
+			}
+		}
+		.snowflake:nth-child(15) {
+			-webkit-animation: snow-15 7s infinite;
+			animation: snow-15 7s infinite;
+		}
+
+		@-webkit-keyframes snow-15 {
+			from {
+				-webkit-transform: translate(148px, -111px);
+				transform: translate(148px, -111px);
+			}
+			to {
+				-webkit-transform: translate(148px, 684px);
+				transform: translate(148px, 684px);
+			}
+		}
+
+		@keyframes snow-15 {
+			from {
+				-webkit-transform: translate(148px, -111px);
+				transform: translate(148px, -111px);
+			}
+			to {
+				-webkit-transform: translate(148px, 684px);
+				transform: translate(148px, 684px);
+			}
+		}
+		.snowflake:nth-child(16) {
+			-webkit-animation: snow-16 12s infinite;
+			animation: snow-16 12s infinite;
+		}
+
+		@-webkit-keyframes snow-16 {
+			from {
+				-webkit-transform: translate(244px, -260px);
+				transform: translate(244px, -260px);
+			}
+			to {
+				-webkit-transform: translate(244px, 412px);
+				transform: translate(244px, 412px);
+			}
+		}
+
+		@keyframes snow-16 {
+			from {
+				-webkit-transform: translate(244px, -260px);
+				transform: translate(244px, -260px);
+			}
+			to {
+				-webkit-transform: translate(244px, 412px);
+				transform: translate(244px, 412px);
+			}
+		}
+		.snowflake:nth-child(17) {
+			-webkit-animation: snow-17 6s infinite;
+			animation: snow-17 6s infinite;
+		}
+
+		@-webkit-keyframes snow-17 {
+			from {
+				-webkit-transform: translate(298px, -248px);
+				transform: translate(298px, -248px);
+			}
+			to {
+				-webkit-transform: translate(298px, 444px);
+				transform: translate(298px, 444px);
+			}
+		}
+
+		@keyframes snow-17 {
+			from {
+				-webkit-transform: translate(298px, -248px);
+				transform: translate(298px, -248px);
+			}
+			to {
+				-webkit-transform: translate(298px, 444px);
+				transform: translate(298px, 444px);
+			}
+		}
+		.snowflake:nth-child(18) {
+			-webkit-animation: snow-18 14s infinite;
+			animation: snow-18 14s infinite;
+		}
+
+		@-webkit-keyframes snow-18 {
+			from {
+				-webkit-transform: translate(249px, -37px);
+				transform: translate(249px, -37px);
+			}
+			to {
+				-webkit-transform: translate(249px, 647px);
+				transform: translate(249px, 647px);
+			}
+		}
+
+		@keyframes snow-18 {
+			from {
+				-webkit-transform: translate(249px, -37px);
+				transform: translate(249px, -37px);
+			}
+			to {
+				-webkit-transform: translate(249px, 647px);
+				transform: translate(249px, 647px);
+			}
+		}
+		.snowflake:nth-child(19) {
+			-webkit-animation: snow-19 11s infinite;
+			animation: snow-19 11s infinite;
+		}
+
+		@-webkit-keyframes snow-19 {
+			from {
+				-webkit-transform: translate(196px, -281px);
+				transform: translate(196px, -281px);
+			}
+			to {
+				-webkit-transform: translate(196px, 569px);
+				transform: translate(196px, 569px);
+			}
+		}
+
+		@keyframes snow-19 {
+			from {
+				-webkit-transform: translate(196px, -281px);
+				transform: translate(196px, -281px);
+			}
+			to {
+				-webkit-transform: translate(196px, 569px);
+				transform: translate(196px, 569px);
+			}
+		}
+		.snowflake:nth-child(20) {
+			-webkit-animation: snow-20 6s infinite;
+			animation: snow-20 6s infinite;
+		}
+
+		@-webkit-keyframes snow-20 {
+			from {
+				-webkit-transform: translate(50px, -25px);
+				transform: translate(50px, -25px);
+			}
+			to {
+				-webkit-transform: translate(50px, 682px);
+				transform: translate(50px, 682px);
+			}
+		}
+
+		@keyframes snow-20 {
+			from {
+				-webkit-transform: translate(50px, -25px);
+				transform: translate(50px, -25px);
+			}
+			to {
+				-webkit-transform: translate(50px, 682px);
+				transform: translate(50px, 682px);
+			}
+		}
+		.snowflake:nth-child(21) {
+			-webkit-animation: snow-21 6s infinite;
+			animation: snow-21 6s infinite;
+		}
+
+		@-webkit-keyframes snow-21 {
+			from {
+				-webkit-transform: translate(270px, -60px);
+				transform: translate(270px, -60px);
+			}
+			to {
+				-webkit-transform: translate(270px, 670px);
+				transform: translate(270px, 670px);
+			}
+		}
+
+		@keyframes snow-21 {
+			from {
+				-webkit-transform: translate(270px, -60px);
+				transform: translate(270px, -60px);
+			}
+			to {
+				-webkit-transform: translate(270px, 670px);
+				transform: translate(270px, 670px);
+			}
+		}
+		.snowflake:nth-child(22) {
+			-webkit-animation: snow-22 7s infinite;
+			animation: snow-22 7s infinite;
+		}
+
+		@-webkit-keyframes snow-22 {
+			from {
+				-webkit-transform: translate(132px, -57px);
+				transform: translate(132px, -57px);
+			}
+			to {
+				-webkit-transform: translate(132px, 481px);
+				transform: translate(132px, 481px);
+			}
+		}
+
+		@keyframes snow-22 {
+			from {
+				-webkit-transform: translate(132px, -57px);
+				transform: translate(132px, -57px);
+			}
+			to {
+				-webkit-transform: translate(132px, 481px);
+				transform: translate(132px, 481px);
+			}
+		}
+		.snowflake:nth-child(23) {
+			-webkit-animation: snow-23 6s infinite;
+			animation: snow-23 6s infinite;
+		}
+
+		@-webkit-keyframes snow-23 {
+			from {
+				-webkit-transform: translate(40px, -198px);
+				transform: translate(40px, -198px);
+			}
+			to {
+				-webkit-transform: translate(40px, 596px);
+				transform: translate(40px, 596px);
+			}
+		}
+
+		@keyframes snow-23 {
+			from {
+				-webkit-transform: translate(40px, -198px);
+				transform: translate(40px, -198px);
+			}
+			to {
+				-webkit-transform: translate(40px, 596px);
+				transform: translate(40px, 596px);
+			}
+		}
+		.snowflake:nth-child(24) {
+			-webkit-animation: snow-24 14s infinite;
+			animation: snow-24 14s infinite;
+		}
+
+		@-webkit-keyframes snow-24 {
+			from {
+				-webkit-transform: translate(120px, -3px);
+				transform: translate(120px, -3px);
+			}
+			to {
+				-webkit-transform: translate(120px, 434px);
+				transform: translate(120px, 434px);
+			}
+		}
+
+		@keyframes snow-24 {
+			from {
+				-webkit-transform: translate(120px, -3px);
+				transform: translate(120px, -3px);
+			}
+			to {
+				-webkit-transform: translate(120px, 434px);
+				transform: translate(120px, 434px);
+			}
+		}
+		.snowflake:nth-child(25) {
+			-webkit-animation: snow-25 11s infinite;
+			animation: snow-25 11s infinite;
+		}
+
+		@-webkit-keyframes snow-25 {
+			from {
+				-webkit-transform: translate(389px, -226px);
+				transform: translate(389px, -226px);
+			}
+			to {
+				-webkit-transform: translate(389px, 423px);
+				transform: translate(389px, 423px);
+			}
+		}
+
+		@keyframes snow-25 {
+			from {
+				-webkit-transform: translate(389px, -226px);
+				transform: translate(389px, -226px);
+			}
+			to {
+				-webkit-transform: translate(389px, 423px);
+				transform: translate(389px, 423px);
+			}
+		}
+		.snowflake:nth-child(26) {
+			-webkit-animation: snow-26 14s infinite;
+			animation: snow-26 14s infinite;
+		}
+
+		@-webkit-keyframes snow-26 {
+			from {
+				-webkit-transform: translate(189px, -193px);
+				transform: translate(189px, -193px);
+			}
+			to {
+				-webkit-transform: translate(189px, 604px);
+				transform: translate(189px, 604px);
+			}
+		}
+
+		@keyframes snow-26 {
+			from {
+				-webkit-transform: translate(189px, -193px);
+				transform: translate(189px, -193px);
+			}
+			to {
+				-webkit-transform: translate(189px, 604px);
+				transform: translate(189px, 604px);
+			}
+		}
+		.snowflake:nth-child(27) {
+			-webkit-animation: snow-27 6s infinite;
+			animation: snow-27 6s infinite;
+		}
+
+		@-webkit-keyframes snow-27 {
+			from {
+				-webkit-transform: translate(125px, -66px);
+				transform: translate(125px, -66px);
+			}
+			to {
+				-webkit-transform: translate(125px, 670px);
+				transform: translate(125px, 670px);
+			}
+		}
+
+		@keyframes snow-27 {
+			from {
+				-webkit-transform: translate(125px, -66px);
+				transform: translate(125px, -66px);
+			}
+			to {
+				-webkit-transform: translate(125px, 670px);
+				transform: translate(125px, 670px);
+			}
+		}
+		.snowflake:nth-child(28) {
+			-webkit-animation: snow-28 10s infinite;
+			animation: snow-28 10s infinite;
+		}
+
+		@-webkit-keyframes snow-28 {
+			from {
+				-webkit-transform: translate(177px, -26px);
+				transform: translate(177px, -26px);
+			}
+			to {
+				-webkit-transform: translate(177px, 697px);
+				transform: translate(177px, 697px);
+			}
+		}
+
+		@keyframes snow-28 {
+			from {
+				-webkit-transform: translate(177px, -26px);
+				transform: translate(177px, -26px);
+			}
+			to {
+				-webkit-transform: translate(177px, 697px);
+				transform: translate(177px, 697px);
+			}
+		}
+		.snowflake:nth-child(29) {
+			-webkit-animation: snow-29 11s infinite;
+			animation: snow-29 11s infinite;
+		}
+
+		@-webkit-keyframes snow-29 {
+			from {
+				-webkit-transform: translate(354px, -198px);
+				transform: translate(354px, -198px);
+			}
+			to {
+				-webkit-transform: translate(354px, 590px);
+				transform: translate(354px, 590px);
+			}
+		}
+
+		@keyframes snow-29 {
+			from {
+				-webkit-transform: translate(354px, -198px);
+				transform: translate(354px, -198px);
+			}
+			to {
+				-webkit-transform: translate(354px, 590px);
+				transform: translate(354px, 590px);
+			}
+		}
+		.snowflake:nth-child(30) {
+			-webkit-animation: snow-30 9s infinite;
+			animation: snow-30 9s infinite;
+		}
+
+		@-webkit-keyframes snow-30 {
+			from {
+				-webkit-transform: translate(200px, -9px);
+				transform: translate(200px, -9px);
+			}
+			to {
+				-webkit-transform: translate(200px, 650px);
+				transform: translate(200px, 650px);
+			}
+		}
+
+		@keyframes snow-30 {
+			from {
+				-webkit-transform: translate(200px, -9px);
+				transform: translate(200px, -9px);
+			}
+			to {
+				-webkit-transform: translate(200px, 650px);
+				transform: translate(200px, 650px);
+			}
+		}
+		.snowflake:nth-child(31) {
+			-webkit-animation: snow-31 8s infinite;
+			animation: snow-31 8s infinite;
+		}
+
+		@-webkit-keyframes snow-31 {
+			from {
+				-webkit-transform: translate(146px, -5px);
+				transform: translate(146px, -5px);
+			}
+			to {
+				-webkit-transform: translate(146px, 597px);
+				transform: translate(146px, 597px);
+			}
+		}
+
+		@keyframes snow-31 {
+			from {
+				-webkit-transform: translate(146px, -5px);
+				transform: translate(146px, -5px);
+			}
+			to {
+				-webkit-transform: translate(146px, 597px);
+				transform: translate(146px, 597px);
+			}
+		}
+		.snowflake:nth-child(32) {
+			-webkit-animation: snow-32 6s infinite;
+			animation: snow-32 6s infinite;
+		}
+
+		@-webkit-keyframes snow-32 {
+			from {
+				-webkit-transform: translate(220px, -273px);
+				transform: translate(220px, -273px);
+			}
+			to {
+				-webkit-transform: translate(220px, 658px);
+				transform: translate(220px, 658px);
+			}
+		}
+
+		@keyframes snow-32 {
+			from {
+				-webkit-transform: translate(220px, -273px);
+				transform: translate(220px, -273px);
+			}
+			to {
+				-webkit-transform: translate(220px, 658px);
+				transform: translate(220px, 658px);
+			}
+		}
+		.snowflake:nth-child(33) {
+			-webkit-animation: snow-33 7s infinite;
+			animation: snow-33 7s infinite;
+		}
+
+		@-webkit-keyframes snow-33 {
+			from {
+				-webkit-transform: translate(127px, -114px);
+				transform: translate(127px, -114px);
+			}
+			to {
+				-webkit-transform: translate(127px, 502px);
+				transform: translate(127px, 502px);
+			}
+		}
+
+		@keyframes snow-33 {
+			from {
+				-webkit-transform: translate(127px, -114px);
+				transform: translate(127px, -114px);
+			}
+			to {
+				-webkit-transform: translate(127px, 502px);
+				transform: translate(127px, 502px);
+			}
+		}
+		.snowflake:nth-child(34) {
+			-webkit-animation: snow-34 7s infinite;
+			animation: snow-34 7s infinite;
+		}
+
+		@-webkit-keyframes snow-34 {
+			from {
+				-webkit-transform: translate(316px, -184px);
+				transform: translate(316px, -184px);
+			}
+			to {
+				-webkit-transform: translate(316px, 525px);
+				transform: translate(316px, 525px);
+			}
+		}
+
+		@keyframes snow-34 {
+			from {
+				-webkit-transform: translate(316px, -184px);
+				transform: translate(316px, -184px);
+			}
+			to {
+				-webkit-transform: translate(316px, 525px);
+				transform: translate(316px, 525px);
+			}
+		}
+		.snowflake:nth-child(35) {
+			-webkit-animation: snow-35 8s infinite;
+			animation: snow-35 8s infinite;
+		}
+
+		@-webkit-keyframes snow-35 {
+			from {
+				-webkit-transform: translate(236px, -33px);
+				transform: translate(236px, -33px);
+			}
+			to {
+				-webkit-transform: translate(236px, 513px);
+				transform: translate(236px, 513px);
+			}
+		}
+
+		@keyframes snow-35 {
+			from {
+				-webkit-transform: translate(236px, -33px);
+				transform: translate(236px, -33px);
+			}
+			to {
+				-webkit-transform: translate(236px, 513px);
+				transform: translate(236px, 513px);
+			}
+		}
+		.snowflake:nth-child(36) {
+			-webkit-animation: snow-36 12s infinite;
+			animation: snow-36 12s infinite;
+		}
+
+		@-webkit-keyframes snow-36 {
+			from {
+				-webkit-transform: translate(273px, -94px);
+				transform: translate(273px, -94px);
+			}
+			to {
+				-webkit-transform: translate(273px, 445px);
+				transform: translate(273px, 445px);
+			}
+		}
+
+		@keyframes snow-36 {
+			from {
+				-webkit-transform: translate(273px, -94px);
+				transform: translate(273px, -94px);
+			}
+			to {
+				-webkit-transform: translate(273px, 445px);
+				transform: translate(273px, 445px);
+			}
+		}
+		.snowflake:nth-child(37) {
+			-webkit-animation: snow-37 7s infinite;
+			animation: snow-37 7s infinite;
+		}
+
+		@-webkit-keyframes snow-37 {
+			from {
+				-webkit-transform: translate(101px, -75px);
+				transform: translate(101px, -75px);
+			}
+			to {
+				-webkit-transform: translate(101px, 655px);
+				transform: translate(101px, 655px);
+			}
+		}
+
+		@keyframes snow-37 {
+			from {
+				-webkit-transform: translate(101px, -75px);
+				transform: translate(101px, -75px);
+			}
+			to {
+				-webkit-transform: translate(101px, 655px);
+				transform: translate(101px, 655px);
+			}
+		}
+		.snowflake:nth-child(38) {
+			-webkit-animation: snow-38 9s infinite;
+			animation: snow-38 9s infinite;
+		}
+
+		@-webkit-keyframes snow-38 {
+			from {
+				-webkit-transform: translate(356px, -223px);
+				transform: translate(356px, -223px);
+			}
+			to {
+				-webkit-transform: translate(356px, 622px);
+				transform: translate(356px, 622px);
+			}
+		}
+
+		@keyframes snow-38 {
+			from {
+				-webkit-transform: translate(356px, -223px);
+				transform: translate(356px, -223px);
+			}
+			to {
+				-webkit-transform: translate(356px, 622px);
+				transform: translate(356px, 622px);
+			}
+		}
+		.snowflake:nth-child(39) {
+			-webkit-animation: snow-39 12s infinite;
+			animation: snow-39 12s infinite;
+		}
+
+		@-webkit-keyframes snow-39 {
+			from {
+				-webkit-transform: translate(302px, -110px);
+				transform: translate(302px, -110px);
+			}
+			to {
+				-webkit-transform: translate(302px, 406px);
+				transform: translate(302px, 406px);
+			}
+		}
+
+		@keyframes snow-39 {
+			from {
+				-webkit-transform: translate(302px, -110px);
+				transform: translate(302px, -110px);
+			}
+			to {
+				-webkit-transform: translate(302px, 406px);
+				transform: translate(302px, 406px);
+			}
+		}
+		.snowflake:nth-child(40) {
+			-webkit-animation: snow-40 10s infinite;
+			animation: snow-40 10s infinite;
+		}
+
+		@-webkit-keyframes snow-40 {
+			from {
+				-webkit-transform: translate(59px, -36px);
+				transform: translate(59px, -36px);
+			}
+			to {
+				-webkit-transform: translate(59px, 406px);
+				transform: translate(59px, 406px);
+			}
+		}
+
+		@keyframes snow-40 {
+			from {
+				-webkit-transform: translate(59px, -36px);
+				transform: translate(59px, -36px);
+			}
+			to {
+				-webkit-transform: translate(59px, 406px);
+				transform: translate(59px, 406px);
+			}
+		}
+		.snowflake:nth-child(41) {
+			-webkit-animation: snow-41 15s infinite;
+			animation: snow-41 15s infinite;
+		}
+
+		@-webkit-keyframes snow-41 {
+			from {
+				-webkit-transform: translate(247px, -276px);
+				transform: translate(247px, -276px);
+			}
+			to {
+				-webkit-transform: translate(247px, 646px);
+				transform: translate(247px, 646px);
+			}
+		}
+
+		@keyframes snow-41 {
+			from {
+				-webkit-transform: translate(247px, -276px);
+				transform: translate(247px, -276px);
+			}
+			to {
+				-webkit-transform: translate(247px, 646px);
+				transform: translate(247px, 646px);
+			}
+		}
+		.snowflake:nth-child(42) {
+			-webkit-animation: snow-42 14s infinite;
+			animation: snow-42 14s infinite;
+		}
+
+		@-webkit-keyframes snow-42 {
+			from {
+				-webkit-transform: translate(31px, -121px);
+				transform: translate(31px, -121px);
+			}
+			to {
+				-webkit-transform: translate(31px, 580px);
+				transform: translate(31px, 580px);
+			}
+		}
+
+		@keyframes snow-42 {
+			from {
+				-webkit-transform: translate(31px, -121px);
+				transform: translate(31px, -121px);
+			}
+			to {
+				-webkit-transform: translate(31px, 580px);
+				transform: translate(31px, 580px);
+			}
+		}
+		.snowflake:nth-child(43) {
+			-webkit-animation: snow-43 8s infinite;
+			animation: snow-43 8s infinite;
+		}
+
+		@-webkit-keyframes snow-43 {
+			from {
+				-webkit-transform: translate(276px, -34px);
+				transform: translate(276px, -34px);
+			}
+			to {
+				-webkit-transform: translate(276px, 463px);
+				transform: translate(276px, 463px);
+			}
+		}
+
+		@keyframes snow-43 {
+			from {
+				-webkit-transform: translate(276px, -34px);
+				transform: translate(276px, -34px);
+			}
+			to {
+				-webkit-transform: translate(276px, 463px);
+				transform: translate(276px, 463px);
+			}
+		}
+		.snowflake:nth-child(44) {
+			-webkit-animation: snow-44 10s infinite;
+			animation: snow-44 10s infinite;
+		}
+
+		@-webkit-keyframes snow-44 {
+			from {
+				-webkit-transform: translate(368px, -132px);
+				transform: translate(368px, -132px);
+			}
+			to {
+				-webkit-transform: translate(368px, 456px);
+				transform: translate(368px, 456px);
+			}
+		}
+
+		@keyframes snow-44 {
+			from {
+				-webkit-transform: translate(368px, -132px);
+				transform: translate(368px, -132px);
+			}
+			to {
+				-webkit-transform: translate(368px, 456px);
+				transform: translate(368px, 456px);
+			}
+		}
+		.snowflake:nth-child(45) {
+			-webkit-animation: snow-45 14s infinite;
+			animation: snow-45 14s infinite;
+		}
+
+		@-webkit-keyframes snow-45 {
+			from {
+				-webkit-transform: translate(243px, -32px);
+				transform: translate(243px, -32px);
+			}
+			to {
+				-webkit-transform: translate(243px, 412px);
+				transform: translate(243px, 412px);
+			}
+		}
+
+		@keyframes snow-45 {
+			from {
+				-webkit-transform: translate(243px, -32px);
+				transform: translate(243px, -32px);
+			}
+			to {
+				-webkit-transform: translate(243px, 412px);
+				transform: translate(243px, 412px);
+			}
+		}
+		.snowflake:nth-child(46) {
+			-webkit-animation: snow-46 13s infinite;
+			animation: snow-46 13s infinite;
+		}
+
+		@-webkit-keyframes snow-46 {
+			from {
+				-webkit-transform: translate(95px, -168px);
+				transform: translate(95px, -168px);
+			}
+			to {
+				-webkit-transform: translate(95px, 577px);
+				transform: translate(95px, 577px);
+			}
+		}
+
+		@keyframes snow-46 {
+			from {
+				-webkit-transform: translate(95px, -168px);
+				transform: translate(95px, -168px);
+			}
+			to {
+				-webkit-transform: translate(95px, 577px);
+				transform: translate(95px, 577px);
+			}
+		}
+		.snowflake:nth-child(47) {
+			-webkit-animation: snow-47 12s infinite;
+			animation: snow-47 12s infinite;
+		}
+
+		@-webkit-keyframes snow-47 {
+			from {
+				-webkit-transform: translate(120px, -22px);
+				transform: translate(120px, -22px);
+			}
+			to {
+				-webkit-transform: translate(120px, 699px);
+				transform: translate(120px, 699px);
+			}
+		}
+
+		@keyframes snow-47 {
+			from {
+				-webkit-transform: translate(120px, -22px);
+				transform: translate(120px, -22px);
+			}
+			to {
+				-webkit-transform: translate(120px, 699px);
+				transform: translate(120px, 699px);
+			}
+		}
+		.snowflake:nth-child(48) {
+			-webkit-animation: snow-48 15s infinite;
+			animation: snow-48 15s infinite;
+		}
+
+		@-webkit-keyframes snow-48 {
+			from {
+				-webkit-transform: translate(345px, -164px);
+				transform: translate(345px, -164px);
+			}
+			to {
+				-webkit-transform: translate(345px, 632px);
+				transform: translate(345px, 632px);
+			}
+		}
+
+		@keyframes snow-48 {
+			from {
+				-webkit-transform: translate(345px, -164px);
+				transform: translate(345px, -164px);
+			}
+			to {
+				-webkit-transform: translate(345px, 632px);
+				transform: translate(345px, 632px);
+			}
+		}
+		.snowflake:nth-child(49) {
+			-webkit-animation: snow-49 7s infinite;
+			animation: snow-49 7s infinite;
+		}
+
+		@-webkit-keyframes snow-49 {
+			from {
+				-webkit-transform: translate(215px, -299px);
+				transform: translate(215px, -299px);
+			}
+			to {
+				-webkit-transform: translate(215px, 480px);
+				transform: translate(215px, 480px);
+			}
+		}
+
+		@keyframes snow-49 {
+			from {
+				-webkit-transform: translate(215px, -299px);
+				transform: translate(215px, -299px);
+			}
+			to {
+				-webkit-transform: translate(215px, 480px);
+				transform: translate(215px, 480px);
+			}
+		}
+		.snowflake:nth-child(50) {
+			-webkit-animation: snow-50 6s infinite;
+			animation: snow-50 6s infinite;
+		}
+
+		@-webkit-keyframes snow-50 {
+			from {
+				-webkit-transform: translate(350px, -227px);
+				transform: translate(350px, -227px);
+			}
+			to {
+				-webkit-transform: translate(350px, 680px);
+				transform: translate(350px, 680px);
+			}
+		}
+
+		@keyframes snow-50 {
+			from {
+				-webkit-transform: translate(350px, -227px);
+				transform: translate(350px, -227px);
+			}
+			to {
+				-webkit-transform: translate(350px, 680px);
+				transform: translate(350px, 680px);
+			}
+		}
+		.snowflake:nth-child(51) {
+			-webkit-animation: snow-51 12s infinite;
+			animation: snow-51 12s infinite;
+		}
+
+		@-webkit-keyframes snow-51 {
+			from {
+				-webkit-transform: translate(395px, -148px);
+				transform: translate(395px, -148px);
+			}
+			to {
+				-webkit-transform: translate(395px, 543px);
+				transform: translate(395px, 543px);
+			}
+		}
+
+		@keyframes snow-51 {
+			from {
+				-webkit-transform: translate(395px, -148px);
+				transform: translate(395px, -148px);
+			}
+			to {
+				-webkit-transform: translate(395px, 543px);
+				transform: translate(395px, 543px);
+			}
+		}
+		.snowflake:nth-child(52) {
+			-webkit-animation: snow-52 14s infinite;
+			animation: snow-52 14s infinite;
+		}
+
+		@-webkit-keyframes snow-52 {
+			from {
+				-webkit-transform: translate(266px, -279px);
+				transform: translate(266px, -279px);
+			}
+			to {
+				-webkit-transform: translate(266px, 700px);
+				transform: translate(266px, 700px);
+			}
+		}
+
+		@keyframes snow-52 {
+			from {
+				-webkit-transform: translate(266px, -279px);
+				transform: translate(266px, -279px);
+			}
+			to {
+				-webkit-transform: translate(266px, 700px);
+				transform: translate(266px, 700px);
+			}
+		}
+		.snowflake:nth-child(53) {
+			-webkit-animation: snow-53 15s infinite;
+			animation: snow-53 15s infinite;
+		}
+
+		@-webkit-keyframes snow-53 {
+			from {
+				-webkit-transform: translate(366px, -200px);
+				transform: translate(366px, -200px);
+			}
+			to {
+				-webkit-transform: translate(366px, 582px);
+				transform: translate(366px, 582px);
+			}
+		}
+
+		@keyframes snow-53 {
+			from {
+				-webkit-transform: translate(366px, -200px);
+				transform: translate(366px, -200px);
+			}
+			to {
+				-webkit-transform: translate(366px, 582px);
+				transform: translate(366px, 582px);
+			}
+		}
+		.snowflake:nth-child(54) {
+			-webkit-animation: snow-54 6s infinite;
+			animation: snow-54 6s infinite;
+		}
+
+		@-webkit-keyframes snow-54 {
+			from {
+				-webkit-transform: translate(360px, -30px);
+				transform: translate(360px, -30px);
+			}
+			to {
+				-webkit-transform: translate(360px, 685px);
+				transform: translate(360px, 685px);
+			}
+		}
+
+		@keyframes snow-54 {
+			from {
+				-webkit-transform: translate(360px, -30px);
+				transform: translate(360px, -30px);
+			}
+			to {
+				-webkit-transform: translate(360px, 685px);
+				transform: translate(360px, 685px);
+			}
+		}
+		.snowflake:nth-child(55) {
+			-webkit-animation: snow-55 12s infinite;
+			animation: snow-55 12s infinite;
+		}
+
+		@-webkit-keyframes snow-55 {
+			from {
+				-webkit-transform: translate(68px, -277px);
+				transform: translate(68px, -277px);
+			}
+			to {
+				-webkit-transform: translate(68px, 651px);
+				transform: translate(68px, 651px);
+			}
+		}
+
+		@keyframes snow-55 {
+			from {
+				-webkit-transform: translate(68px, -277px);
+				transform: translate(68px, -277px);
+			}
+			to {
+				-webkit-transform: translate(68px, 651px);
+				transform: translate(68px, 651px);
+			}
+		}
+		.snowflake:nth-child(56) {
+			-webkit-animation: snow-56 14s infinite;
+			animation: snow-56 14s infinite;
+		}
+
+		@-webkit-keyframes snow-56 {
+			from {
+				-webkit-transform: translate(184px, -183px);
+				transform: translate(184px, -183px);
+			}
+			to {
+				-webkit-transform: translate(184px, 436px);
+				transform: translate(184px, 436px);
+			}
+		}
+
+		@keyframes snow-56 {
+			from {
+				-webkit-transform: translate(184px, -183px);
+				transform: translate(184px, -183px);
+			}
+			to {
+				-webkit-transform: translate(184px, 436px);
+				transform: translate(184px, 436px);
+			}
+		}
+		.snowflake:nth-child(57) {
+			-webkit-animation: snow-57 6s infinite;
+			animation: snow-57 6s infinite;
+		}
+
+		@-webkit-keyframes snow-57 {
+			from {
+				-webkit-transform: translate(161px, -157px);
+				transform: translate(161px, -157px);
+			}
+			to {
+				-webkit-transform: translate(161px, 458px);
+				transform: translate(161px, 458px);
+			}
+		}
+
+		@keyframes snow-57 {
+			from {
+				-webkit-transform: translate(161px, -157px);
+				transform: translate(161px, -157px);
+			}
+			to {
+				-webkit-transform: translate(161px, 458px);
+				transform: translate(161px, 458px);
+			}
+		}
+		.snowflake:nth-child(58) {
+			-webkit-animation: snow-58 7s infinite;
+			animation: snow-58 7s infinite;
+		}
+
+		@-webkit-keyframes snow-58 {
+			from {
+				-webkit-transform: translate(91px, -81px);
+				transform: translate(91px, -81px);
+			}
+			to {
+				-webkit-transform: translate(91px, 618px);
+				transform: translate(91px, 618px);
+			}
+		}
+
+		@keyframes snow-58 {
+			from {
+				-webkit-transform: translate(91px, -81px);
+				transform: translate(91px, -81px);
+			}
+			to {
+				-webkit-transform: translate(91px, 618px);
+				transform: translate(91px, 618px);
+			}
+		}
+		.snowflake:nth-child(59) {
+			-webkit-animation: snow-59 7s infinite;
+			animation: snow-59 7s infinite;
+		}
+
+		@-webkit-keyframes snow-59 {
+			from {
+				-webkit-transform: translate(253px, -123px);
+				transform: translate(253px, -123px);
+			}
+			to {
+				-webkit-transform: translate(253px, 586px);
+				transform: translate(253px, 586px);
+			}
+		}
+
+		@keyframes snow-59 {
+			from {
+				-webkit-transform: translate(253px, -123px);
+				transform: translate(253px, -123px);
+			}
+			to {
+				-webkit-transform: translate(253px, 586px);
+				transform: translate(253px, 586px);
+			}
+		}
+		.snowflake:nth-child(60) {
+			-webkit-animation: snow-60 15s infinite;
+			animation: snow-60 15s infinite;
+		}
+
+		@-webkit-keyframes snow-60 {
+			from {
+				-webkit-transform: translate(234px, -94px);
+				transform: translate(234px, -94px);
+			}
+			to {
+				-webkit-transform: translate(234px, 606px);
+				transform: translate(234px, 606px);
+			}
+		}
+
+		@keyframes snow-60 {
+			from {
+				-webkit-transform: translate(234px, -94px);
+				transform: translate(234px, -94px);
+			}
+			to {
+				-webkit-transform: translate(234px, 606px);
+				transform: translate(234px, 606px);
+			}
+		}
+		.snowflake:nth-child(61) {
+			-webkit-animation: snow-61 14s infinite;
+			animation: snow-61 14s infinite;
+		}
+
+		@-webkit-keyframes snow-61 {
+			from {
+				-webkit-transform: translate(363px, -140px);
+				transform: translate(363px, -140px);
+			}
+			to {
+				-webkit-transform: translate(363px, 676px);
+				transform: translate(363px, 676px);
+			}
+		}
+
+		@keyframes snow-61 {
+			from {
+				-webkit-transform: translate(363px, -140px);
+				transform: translate(363px, -140px);
+			}
+			to {
+				-webkit-transform: translate(363px, 676px);
+				transform: translate(363px, 676px);
+			}
+		}
+		.snowflake:nth-child(62) {
+			-webkit-animation: snow-62 13s infinite;
+			animation: snow-62 13s infinite;
+		}
+
+		@-webkit-keyframes snow-62 {
+			from {
+				-webkit-transform: translate(93px, -228px);
+				transform: translate(93px, -228px);
+			}
+			to {
+				-webkit-transform: translate(93px, 647px);
+				transform: translate(93px, 647px);
+			}
+		}
+
+		@keyframes snow-62 {
+			from {
+				-webkit-transform: translate(93px, -228px);
+				transform: translate(93px, -228px);
+			}
+			to {
+				-webkit-transform: translate(93px, 647px);
+				transform: translate(93px, 647px);
+			}
+		}
+		.snowflake:nth-child(63) {
+			-webkit-animation: snow-63 8s infinite;
+			animation: snow-63 8s infinite;
+		}
+
+		@-webkit-keyframes snow-63 {
+			from {
+				-webkit-transform: translate(223px, -182px);
+				transform: translate(223px, -182px);
+			}
+			to {
+				-webkit-transform: translate(223px, 633px);
+				transform: translate(223px, 633px);
+			}
+		}
+
+		@keyframes snow-63 {
+			from {
+				-webkit-transform: translate(223px, -182px);
+				transform: translate(223px, -182px);
+			}
+			to {
+				-webkit-transform: translate(223px, 633px);
+				transform: translate(223px, 633px);
+			}
+		}
+		.snowflake:nth-child(64) {
+			-webkit-animation: snow-64 11s infinite;
+			animation: snow-64 11s infinite;
+		}
+
+		@-webkit-keyframes snow-64 {
+			from {
+				-webkit-transform: translate(432px, -155px);
+				transform: translate(432px, -155px);
+			}
+			to {
+				-webkit-transform: translate(432px, 450px);
+				transform: translate(432px, 450px);
+			}
+		}
+
+		@keyframes snow-64 {
+			from {
+				-webkit-transform: translate(432px, -155px);
+				transform: translate(432px, -155px);
+			}
+			to {
+				-webkit-transform: translate(432px, 450px);
+				transform: translate(432px, 450px);
+			}
+		}
+		.snowflake:nth-child(65) {
+			-webkit-animation: snow-65 13s infinite;
+			animation: snow-65 13s infinite;
+		}
+
+		@-webkit-keyframes snow-65 {
+			from {
+				-webkit-transform: translate(271px, -99px);
+				transform: translate(271px, -99px);
+			}
+			to {
+				-webkit-transform: translate(271px, 606px);
+				transform: translate(271px, 606px);
+			}
+		}
+
+		@keyframes snow-65 {
+			from {
+				-webkit-transform: translate(271px, -99px);
+				transform: translate(271px, -99px);
+			}
+			to {
+				-webkit-transform: translate(271px, 606px);
+				transform: translate(271px, 606px);
+			}
+		}
+		.snowflake:nth-child(66) {
+			-webkit-animation: snow-66 15s infinite;
+			animation: snow-66 15s infinite;
+		}
+
+		@-webkit-keyframes snow-66 {
+			from {
+				-webkit-transform: translate(167px, -69px);
+				transform: translate(167px, -69px);
+			}
+			to {
+				-webkit-transform: translate(167px, 576px);
+				transform: translate(167px, 576px);
+			}
+		}
+
+		@keyframes snow-66 {
+			from {
+				-webkit-transform: translate(167px, -69px);
+				transform: translate(167px, -69px);
+			}
+			to {
+				-webkit-transform: translate(167px, 576px);
+				transform: translate(167px, 576px);
+			}
+		}
+		.snowflake:nth-child(67) {
+			-webkit-animation: snow-67 10s infinite;
+			animation: snow-67 10s infinite;
+		}
+
+		@-webkit-keyframes snow-67 {
+			from {
+				-webkit-transform: translate(27px, -166px);
+				transform: translate(27px, -166px);
+			}
+			to {
+				-webkit-transform: translate(27px, 498px);
+				transform: translate(27px, 498px);
+			}
+		}
+
+		@keyframes snow-67 {
+			from {
+				-webkit-transform: translate(27px, -166px);
+				transform: translate(27px, -166px);
+			}
+			to {
+				-webkit-transform: translate(27px, 498px);
+				transform: translate(27px, 498px);
+			}
+		}
+		.snowflake:nth-child(68) {
+			-webkit-animation: snow-68 7s infinite;
+			animation: snow-68 7s infinite;
+		}
+
+		@-webkit-keyframes snow-68 {
+			from {
+				-webkit-transform: translate(158px, -125px);
+				transform: translate(158px, -125px);
+			}
+			to {
+				-webkit-transform: translate(158px, 532px);
+				transform: translate(158px, 532px);
+			}
+		}
+
+		@keyframes snow-68 {
+			from {
+				-webkit-transform: translate(158px, -125px);
+				transform: translate(158px, -125px);
+			}
+			to {
+				-webkit-transform: translate(158px, 532px);
+				transform: translate(158px, 532px);
+			}
+		}
+		.snowflake:nth-child(69) {
+			-webkit-animation: snow-69 6s infinite;
+			animation: snow-69 6s infinite;
+		}
+
+		@-webkit-keyframes snow-69 {
+			from {
+				-webkit-transform: translate(152px, -297px);
+				transform: translate(152px, -297px);
+			}
+			to {
+				-webkit-transform: translate(152px, 519px);
+				transform: translate(152px, 519px);
+			}
+		}
+
+		@keyframes snow-69 {
+			from {
+				-webkit-transform: translate(152px, -297px);
+				transform: translate(152px, -297px);
+			}
+			to {
+				-webkit-transform: translate(152px, 519px);
+				transform: translate(152px, 519px);
+			}
+		}
+		.snowflake:nth-child(70) {
+			-webkit-animation: snow-70 6s infinite;
+			animation: snow-70 6s infinite;
+		}
+
+		@-webkit-keyframes snow-70 {
+			from {
+				-webkit-transform: translate(116px, -274px);
+				transform: translate(116px, -274px);
+			}
+			to {
+				-webkit-transform: translate(116px, 696px);
+				transform: translate(116px, 696px);
+			}
+		}
+
+		@keyframes snow-70 {
+			from {
+				-webkit-transform: translate(116px, -274px);
+				transform: translate(116px, -274px);
+			}
+			to {
+				-webkit-transform: translate(116px, 696px);
+				transform: translate(116px, 696px);
+			}
+		}
+		.snowflake:nth-child(71) {
+			-webkit-animation: snow-71 6s infinite;
+			animation: snow-71 6s infinite;
+		}
+
+		@-webkit-keyframes snow-71 {
+			from {
+				-webkit-transform: translate(311px, -242px);
+				transform: translate(311px, -242px);
+			}
+			to {
+				-webkit-transform: translate(311px, 627px);
+				transform: translate(311px, 627px);
+			}
+		}
+
+		@keyframes snow-71 {
+			from {
+				-webkit-transform: translate(311px, -242px);
+				transform: translate(311px, -242px);
+			}
+			to {
+				-webkit-transform: translate(311px, 627px);
+				transform: translate(311px, 627px);
+			}
+		}
+		.snowflake:nth-child(72) {
+			-webkit-animation: snow-72 8s infinite;
+			animation: snow-72 8s infinite;
+		}
+
+		@-webkit-keyframes snow-72 {
+			from {
+				-webkit-transform: translate(386px, -256px);
+				transform: translate(386px, -256px);
+			}
+			to {
+				-webkit-transform: translate(386px, 575px);
+				transform: translate(386px, 575px);
+			}
+		}
+
+		@keyframes snow-72 {
+			from {
+				-webkit-transform: translate(386px, -256px);
+				transform: translate(386px, -256px);
+			}
+			to {
+				-webkit-transform: translate(386px, 575px);
+				transform: translate(386px, 575px);
+			}
+		}
+		.snowflake:nth-child(73) {
+			-webkit-animation: snow-73 8s infinite;
+			animation: snow-73 8s infinite;
+		}
+
+		@-webkit-keyframes snow-73 {
+			from {
+				-webkit-transform: translate(181px, -165px);
+				transform: translate(181px, -165px);
+			}
+			to {
+				-webkit-transform: translate(181px, 636px);
+				transform: translate(181px, 636px);
+			}
+		}
+
+		@keyframes snow-73 {
+			from {
+				-webkit-transform: translate(181px, -165px);
+				transform: translate(181px, -165px);
+			}
+			to {
+				-webkit-transform: translate(181px, 636px);
+				transform: translate(181px, 636px);
+			}
+		}
+		.snowflake:nth-child(74) {
+			-webkit-animation: snow-74 14s infinite;
+			animation: snow-74 14s infinite;
+		}
+
+		@-webkit-keyframes snow-74 {
+			from {
+				-webkit-transform: translate(224px, -97px);
+				transform: translate(224px, -97px);
+			}
+			to {
+				-webkit-transform: translate(224px, 498px);
+				transform: translate(224px, 498px);
+			}
+		}
+
+		@keyframes snow-74 {
+			from {
+				-webkit-transform: translate(224px, -97px);
+				transform: translate(224px, -97px);
+			}
+			to {
+				-webkit-transform: translate(224px, 498px);
+				transform: translate(224px, 498px);
+			}
+		}
+		.snowflake:nth-child(75) {
+			-webkit-animation: snow-75 6s infinite;
+			animation: snow-75 6s infinite;
+		}
+
+		@-webkit-keyframes snow-75 {
+			from {
+				-webkit-transform: translate(94px, -17px);
+				transform: translate(94px, -17px);
+			}
+			to {
+				-webkit-transform: translate(94px, 434px);
+				transform: translate(94px, 434px);
+			}
+		}
+
+		@keyframes snow-75 {
+			from {
+				-webkit-transform: translate(94px, -17px);
+				transform: translate(94px, -17px);
+			}
+			to {
+				-webkit-transform: translate(94px, 434px);
+				transform: translate(94px, 434px);
+			}
+		}
+		.snowflake:nth-child(76) {
+			-webkit-animation: snow-76 13s infinite;
+			animation: snow-76 13s infinite;
+		}
+
+		@-webkit-keyframes snow-76 {
+			from {
+				-webkit-transform: translate(111px, -237px);
+				transform: translate(111px, -237px);
+			}
+			to {
+				-webkit-transform: translate(111px, 500px);
+				transform: translate(111px, 500px);
+			}
+		}
+
+		@keyframes snow-76 {
+			from {
+				-webkit-transform: translate(111px, -237px);
+				transform: translate(111px, -237px);
+			}
+			to {
+				-webkit-transform: translate(111px, 500px);
+				transform: translate(111px, 500px);
+			}
+		}
+		.snowflake:nth-child(77) {
+			-webkit-animation: snow-77 9s infinite;
+			animation: snow-77 9s infinite;
+		}
+
+		@-webkit-keyframes snow-77 {
+			from {
+				-webkit-transform: translate(204px, -105px);
+				transform: translate(204px, -105px);
+			}
+			to {
+				-webkit-transform: translate(204px, 463px);
+				transform: translate(204px, 463px);
+			}
+		}
+
+		@keyframes snow-77 {
+			from {
+				-webkit-transform: translate(204px, -105px);
+				transform: translate(204px, -105px);
+			}
+			to {
+				-webkit-transform: translate(204px, 463px);
+				transform: translate(204px, 463px);
+			}
+		}
+		.snowflake:nth-child(78) {
+			-webkit-animation: snow-78 10s infinite;
+			animation: snow-78 10s infinite;
+		}
+
+		@-webkit-keyframes snow-78 {
+			from {
+				-webkit-transform: translate(87px, -253px);
+				transform: translate(87px, -253px);
+			}
+			to {
+				-webkit-transform: translate(87px, 563px);
+				transform: translate(87px, 563px);
+			}
+		}
+
+		@keyframes snow-78 {
+			from {
+				-webkit-transform: translate(87px, -253px);
+				transform: translate(87px, -253px);
+			}
+			to {
+				-webkit-transform: translate(87px, 563px);
+				transform: translate(87px, 563px);
+			}
+		}
+		.snowflake:nth-child(79) {
+			-webkit-animation: snow-79 7s infinite;
+			animation: snow-79 7s infinite;
+		}
+
+		@-webkit-keyframes snow-79 {
+			from {
+				-webkit-transform: translate(258px, -85px);
+				transform: translate(258px, -85px);
+			}
+			to {
+				-webkit-transform: translate(258px, 420px);
+				transform: translate(258px, 420px);
+			}
+		}
+
+		@keyframes snow-79 {
+			from {
+				-webkit-transform: translate(258px, -85px);
+				transform: translate(258px, -85px);
+			}
+			to {
+				-webkit-transform: translate(258px, 420px);
+				transform: translate(258px, 420px);
+			}
+		}
+		.snowflake:nth-child(80) {
+			-webkit-animation: snow-80 14s infinite;
+			animation: snow-80 14s infinite;
+		}
+
+		@-webkit-keyframes snow-80 {
+			from {
+				-webkit-transform: translate(10px, -259px);
+				transform: translate(10px, -259px);
+			}
+			to {
+				-webkit-transform: translate(10px, 581px);
+				transform: translate(10px, 581px);
+			}
+		}
+
+		@keyframes snow-80 {
+			from {
+				-webkit-transform: translate(10px, -259px);
+				transform: translate(10px, -259px);
+			}
+			to {
+				-webkit-transform: translate(10px, 581px);
+				transform: translate(10px, 581px);
+			}
+		}
+		.snowflake:nth-child(81) {
+			-webkit-animation: snow-81 13s infinite;
+			animation: snow-81 13s infinite;
+		}
+
+		@-webkit-keyframes snow-81 {
+			from {
+				-webkit-transform: translate(97px, -51px);
+				transform: translate(97px, -51px);
+			}
+			to {
+				-webkit-transform: translate(97px, 526px);
+				transform: translate(97px, 526px);
+			}
+		}
+
+		@keyframes snow-81 {
+			from {
+				-webkit-transform: translate(97px, -51px);
+				transform: translate(97px, -51px);
+			}
+			to {
+				-webkit-transform: translate(97px, 526px);
+				transform: translate(97px, 526px);
+			}
+		}
+		.snowflake:nth-child(82) {
+			-webkit-animation: snow-82 6s infinite;
+			animation: snow-82 6s infinite;
+		}
+
+		@-webkit-keyframes snow-82 {
+			from {
+				-webkit-transform: translate(158px, -24px);
+				transform: translate(158px, -24px);
+			}
+			to {
+				-webkit-transform: translate(158px, 605px);
+				transform: translate(158px, 605px);
+			}
+		}
+
+		@keyframes snow-82 {
+			from {
+				-webkit-transform: translate(158px, -24px);
+				transform: translate(158px, -24px);
+			}
+			to {
+				-webkit-transform: translate(158px, 605px);
+				transform: translate(158px, 605px);
+			}
+		}
+		.snowflake:nth-child(83) {
+			-webkit-animation: snow-83 7s infinite;
+			animation: snow-83 7s infinite;
+		}
+
+		@-webkit-keyframes snow-83 {
+			from {
+				-webkit-transform: translate(388px, -287px);
+				transform: translate(388px, -287px);
+			}
+			to {
+				-webkit-transform: translate(388px, 602px);
+				transform: translate(388px, 602px);
+			}
+		}
+
+		@keyframes snow-83 {
+			from {
+				-webkit-transform: translate(388px, -287px);
+				transform: translate(388px, -287px);
+			}
+			to {
+				-webkit-transform: translate(388px, 602px);
+				transform: translate(388px, 602px);
+			}
+		}
+		.snowflake:nth-child(84) {
+			-webkit-animation: snow-84 10s infinite;
+			animation: snow-84 10s infinite;
+		}
+
+		@-webkit-keyframes snow-84 {
+			from {
+				-webkit-transform: translate(86px, -19px);
+				transform: translate(86px, -19px);
+			}
+			to {
+				-webkit-transform: translate(86px, 513px);
+				transform: translate(86px, 513px);
+			}
+		}
+
+		@keyframes snow-84 {
+			from {
+				-webkit-transform: translate(86px, -19px);
+				transform: translate(86px, -19px);
+			}
+			to {
+				-webkit-transform: translate(86px, 513px);
+				transform: translate(86px, 513px);
+			}
+		}
+		.snowflake:nth-child(85) {
+			-webkit-animation: snow-85 10s infinite;
+			animation: snow-85 10s infinite;
+		}
+
+		@-webkit-keyframes snow-85 {
+			from {
+				-webkit-transform: translate(109px, -15px);
+				transform: translate(109px, -15px);
+			}
+			to {
+				-webkit-transform: translate(109px, 592px);
+				transform: translate(109px, 592px);
+			}
+		}
+
+		@keyframes snow-85 {
+			from {
+				-webkit-transform: translate(109px, -15px);
+				transform: translate(109px, -15px);
+			}
+			to {
+				-webkit-transform: translate(109px, 592px);
+				transform: translate(109px, 592px);
+			}
+		}
+		.snowflake:nth-child(86) {
+			-webkit-animation: snow-86 15s infinite;
+			animation: snow-86 15s infinite;
+		}
+
+		@-webkit-keyframes snow-86 {
+			from {
+				-webkit-transform: translate(275px, -118px);
+				transform: translate(275px, -118px);
+			}
+			to {
+				-webkit-transform: translate(275px, 674px);
+				transform: translate(275px, 674px);
+			}
+		}
+
+		@keyframes snow-86 {
+			from {
+				-webkit-transform: translate(275px, -118px);
+				transform: translate(275px, -118px);
+			}
+			to {
+				-webkit-transform: translate(275px, 674px);
+				transform: translate(275px, 674px);
+			}
+		}
+		.snowflake:nth-child(87) {
+			-webkit-animation: snow-87 7s infinite;
+			animation: snow-87 7s infinite;
+		}
+
+		@-webkit-keyframes snow-87 {
+			from {
+				-webkit-transform: translate(253px, -122px);
+				transform: translate(253px, -122px);
+			}
+			to {
+				-webkit-transform: translate(253px, 664px);
+				transform: translate(253px, 664px);
+			}
+		}
+
+		@keyframes snow-87 {
+			from {
+				-webkit-transform: translate(253px, -122px);
+				transform: translate(253px, -122px);
+			}
+			to {
+				-webkit-transform: translate(253px, 664px);
+				transform: translate(253px, 664px);
+			}
+		}
+		.snowflake:nth-child(88) {
+			-webkit-animation: snow-88 11s infinite;
+			animation: snow-88 11s infinite;
+		}
+
+		@-webkit-keyframes snow-88 {
+			from {
+				-webkit-transform: translate(366px, -199px);
+				transform: translate(366px, -199px);
+			}
+			to {
+				-webkit-transform: translate(366px, 570px);
+				transform: translate(366px, 570px);
+			}
+		}
+
+		@keyframes snow-88 {
+			from {
+				-webkit-transform: translate(366px, -199px);
+				transform: translate(366px, -199px);
+			}
+			to {
+				-webkit-transform: translate(366px, 570px);
+				transform: translate(366px, 570px);
+			}
+		}
+		.snowflake:nth-child(89) {
+			-webkit-animation: snow-89 11s infinite;
+			animation: snow-89 11s infinite;
+		}
+
+		@-webkit-keyframes snow-89 {
+			from {
+				-webkit-transform: translate(97px, -218px);
+				transform: translate(97px, -218px);
+			}
+			to {
+				-webkit-transform: translate(97px, 478px);
+				transform: translate(97px, 478px);
+			}
+		}
+
+		@keyframes snow-89 {
+			from {
+				-webkit-transform: translate(97px, -218px);
+				transform: translate(97px, -218px);
+			}
+			to {
+				-webkit-transform: translate(97px, 478px);
+				transform: translate(97px, 478px);
+			}
+		}
+		.snowflake:nth-child(90) {
+			-webkit-animation: snow-90 11s infinite;
+			animation: snow-90 11s infinite;
+		}
+
+		@-webkit-keyframes snow-90 {
+			from {
+				-webkit-transform: translate(110px, -266px);
+				transform: translate(110px, -266px);
+			}
+			to {
+				-webkit-transform: translate(110px, 514px);
+				transform: translate(110px, 514px);
+			}
+		}
+
+		@keyframes snow-90 {
+			from {
+				-webkit-transform: translate(110px, -266px);
+				transform: translate(110px, -266px);
+			}
+			to {
+				-webkit-transform: translate(110px, 514px);
+				transform: translate(110px, 514px);
+			}
+		}
+		.snowflake:nth-child(91) {
+			-webkit-animation: snow-91 12s infinite;
+			animation: snow-91 12s infinite;
+		}
+
+		@-webkit-keyframes snow-91 {
+			from {
+				-webkit-transform: translate(432px, -265px);
+				transform: translate(432px, -265px);
+			}
+			to {
+				-webkit-transform: translate(432px, 619px);
+				transform: translate(432px, 619px);
+			}
+		}
+
+		@keyframes snow-91 {
+			from {
+				-webkit-transform: translate(432px, -265px);
+				transform: translate(432px, -265px);
+			}
+			to {
+				-webkit-transform: translate(432px, 619px);
+				transform: translate(432px, 619px);
+			}
+		}
+		.snowflake:nth-child(92) {
+			-webkit-animation: snow-92 12s infinite;
+			animation: snow-92 12s infinite;
+		}
+
+		@-webkit-keyframes snow-92 {
+			from {
+				-webkit-transform: translate(254px, -180px);
+				transform: translate(254px, -180px);
+			}
+			to {
+				-webkit-transform: translate(254px, 507px);
+				transform: translate(254px, 507px);
+			}
+		}
+
+		@keyframes snow-92 {
+			from {
+				-webkit-transform: translate(254px, -180px);
+				transform: translate(254px, -180px);
+			}
+			to {
+				-webkit-transform: translate(254px, 507px);
+				transform: translate(254px, 507px);
+			}
+		}
+		.snowflake:nth-child(93) {
+			-webkit-animation: snow-93 12s infinite;
+			animation: snow-93 12s infinite;
+		}
+
+		@-webkit-keyframes snow-93 {
+			from {
+				-webkit-transform: translate(124px, -32px);
+				transform: translate(124px, -32px);
+			}
+			to {
+				-webkit-transform: translate(124px, 463px);
+				transform: translate(124px, 463px);
+			}
+		}
+
+		@keyframes snow-93 {
+			from {
+				-webkit-transform: translate(124px, -32px);
+				transform: translate(124px, -32px);
+			}
+			to {
+				-webkit-transform: translate(124px, 463px);
+				transform: translate(124px, 463px);
+			}
+		}
+		.snowflake:nth-child(94) {
+			-webkit-animation: snow-94 7s infinite;
+			animation: snow-94 7s infinite;
+		}
+
+		@-webkit-keyframes snow-94 {
+			from {
+				-webkit-transform: translate(169px, -144px);
+				transform: translate(169px, -144px);
+			}
+			to {
+				-webkit-transform: translate(169px, 471px);
+				transform: translate(169px, 471px);
+			}
+		}
+
+		@keyframes snow-94 {
+			from {
+				-webkit-transform: translate(169px, -144px);
+				transform: translate(169px, -144px);
+			}
+			to {
+				-webkit-transform: translate(169px, 471px);
+				transform: translate(169px, 471px);
+			}
+		}
+		.snowflake:nth-child(95) {
+			-webkit-animation: snow-95 15s infinite;
+			animation: snow-95 15s infinite;
+		}
+
+		@-webkit-keyframes snow-95 {
+			from {
+				-webkit-transform: translate(300px, -222px);
+				transform: translate(300px, -222px);
+			}
+			to {
+				-webkit-transform: translate(300px, 511px);
+				transform: translate(300px, 511px);
+			}
+		}
+
+		@keyframes snow-95 {
+			from {
+				-webkit-transform: translate(300px, -222px);
+				transform: translate(300px, -222px);
+			}
+			to {
+				-webkit-transform: translate(300px, 511px);
+				transform: translate(300px, 511px);
+			}
+		}
+		.snowflake:nth-child(96) {
+			-webkit-animation: snow-96 9s infinite;
+			animation: snow-96 9s infinite;
+		}
+
+		@-webkit-keyframes snow-96 {
+			from {
+				-webkit-transform: translate(7px, -36px);
+				transform: translate(7px, -36px);
+			}
+			to {
+				-webkit-transform: translate(7px, 608px);
+				transform: translate(7px, 608px);
+			}
+		}
+
+		@keyframes snow-96 {
+			from {
+				-webkit-transform: translate(7px, -36px);
+				transform: translate(7px, -36px);
+			}
+			to {
+				-webkit-transform: translate(7px, 608px);
+				transform: translate(7px, 608px);
+			}
+		}
+		.snowflake:nth-child(97) {
+			-webkit-animation: snow-97 9s infinite;
+			animation: snow-97 9s infinite;
+		}
+
+		@-webkit-keyframes snow-97 {
+			from {
+				-webkit-transform: translate(107px, -226px);
+				transform: translate(107px, -226px);
+			}
+			to {
+				-webkit-transform: translate(107px, 436px);
+				transform: translate(107px, 436px);
+			}
+		}
+
+		@keyframes snow-97 {
+			from {
+				-webkit-transform: translate(107px, -226px);
+				transform: translate(107px, -226px);
+			}
+			to {
+				-webkit-transform: translate(107px, 436px);
+				transform: translate(107px, 436px);
+			}
+		}
+		.snowflake:nth-child(98) {
+			-webkit-animation: snow-98 8s infinite;
+			animation: snow-98 8s infinite;
+		}
+
+		@-webkit-keyframes snow-98 {
+			from {
+				-webkit-transform: translate(277px, -160px);
+				transform: translate(277px, -160px);
+			}
+			to {
+				-webkit-transform: translate(277px, 554px);
+				transform: translate(277px, 554px);
+			}
+		}
+
+		@keyframes snow-98 {
+			from {
+				-webkit-transform: translate(277px, -160px);
+				transform: translate(277px, -160px);
+			}
+			to {
+				-webkit-transform: translate(277px, 554px);
+				transform: translate(277px, 554px);
+			}
+		}
+		.snowflake:nth-child(99) {
+			-webkit-animation: snow-99 11s infinite;
+			animation: snow-99 11s infinite;
+		}
+
+		@-webkit-keyframes snow-99 {
+			from {
+				-webkit-transform: translate(271px, -294px);
+				transform: translate(271px, -294px);
+			}
+			to {
+				-webkit-transform: translate(271px, 492px);
+				transform: translate(271px, 492px);
+			}
+		}
+
+		@keyframes snow-99 {
+			from {
+				-webkit-transform: translate(271px, -294px);
+				transform: translate(271px, -294px);
+			}
+			to {
+				-webkit-transform: translate(271px, 492px);
+				transform: translate(271px, 492px);
+			}
+		}
+		.snowflake:nth-child(100) {
+			-webkit-animation: snow-100 8s infinite;
+			animation: snow-100 8s infinite;
+		}
+
+		@-webkit-keyframes snow-100 {
+			from {
+				-webkit-transform: translate(348px, -254px);
+				transform: translate(348px, -254px);
+			}
+			to {
+				-webkit-transform: translate(348px, 470px);
+				transform: translate(348px, 470px);
+			}
+		}
+
+		@keyframes snow-100 {
+			from {
+				-webkit-transform: translate(348px, -254px);
+				transform: translate(348px, -254px);
+			}
+			to {
+				-webkit-transform: translate(348px, 470px);
+				transform: translate(348px, 470px);
+			}
+		}
+		@-webkit-keyframes tail {
+			10% {
+				-webkit-transform: rotate(2deg);
+				transform: rotate(2deg);
+			}
+			20% {
+				-webkit-transform: rotate(-5deg);
+				transform: rotate(-5deg);
+			}
+		}
+		@keyframes tail {
+			10% {
+				-webkit-transform: rotate(2deg);
+				transform: rotate(2deg);
+			}
+			20% {
+				-webkit-transform: rotate(-5deg);
+				transform: rotate(-5deg);
+			}
+		}
+		@-webkit-keyframes shadow {
+			to {
+				width: 185px;
+			}
+		}
+		@keyframes shadow {
+			to {
+				width: 185px;
+			}
+		}
+		@-webkit-keyframes eyes {
+			50% {
+				-webkit-transform: translate(3px, 2px);
+				transform: translate(3px, 2px);
+			}
+			60% {
+				-webkit-transform: translate(0, 0);
+				transform: translate(0, 0);
+			}
+			100% {
+				-webkit-transform: translate(0, 0);
+				transform: translate(0, 0);
+			}
+		}
+		@keyframes eyes {
+			50% {
+				-webkit-transform: translate(3px, 2px);
+				transform: translate(3px, 2px);
+			}
+			60% {
+				-webkit-transform: translate(0, 0);
+				transform: translate(0, 0);
+			}
+			100% {
+				-webkit-transform: translate(0, 0);
+				transform: translate(0, 0);
+			}
+		}
+		@-webkit-keyframes eaves {
+			50% {
+				-webkit-transform: translateY(0);
+				transform: translateY(0);
+			}
+			60% {
+				-webkit-transform: translateY(-1px);
+				transform: translateY(-1px);
+			}
+			100% {
+				-webkit-transform: translateY(-1px);
+				transform: translateY(-1px);
+			}
+		}
+		@keyframes eaves {
+			50% {
+				-webkit-transform: translateY(0);
+				transform: translateY(0);
+			}
+			60% {
+				-webkit-transform: translateY(-1px);
+				transform: translateY(-1px);
+			}
+			100% {
+				-webkit-transform: translateY(-1px);
+				transform: translateY(-1px);
+			}
+		}
+		@-webkit-keyframes hoof-one {
+			to {
+				-webkit-transform: translateX(2px) rotate(5deg);
+				transform: translateX(2px) rotate(5deg);
+			}
+		}
+		@keyframes hoof-one {
+			to {
+				-webkit-transform: translateX(2px) rotate(5deg);
+				transform: translateX(2px) rotate(5deg);
+			}
+		}
+		@-webkit-keyframes jump {
+			to {
+				-webkit-transform: translateY(-2px) rotate(25deg);
+				transform: translateY(-2px) rotate(25deg);
+			}
+		}
+		@keyframes jump {
+			to {
+				-webkit-transform: translateY(-2px) rotate(25deg);
+				transform: translateY(-2px) rotate(25deg);
+			}
+		}
+		@-webkit-keyframes jump-two {
+			to {
+				-webkit-transform: translateY(2px);
+				transform: translateY(2px);
+			}
+		}
+		@keyframes jump-two {
+			to {
+				-webkit-transform: translateY(2px);
+				transform: translateY(2px);
+			}
+		}
+		@-webkit-keyframes rocking {
+			to {
+				-webkit-transform: rotate(-1deg);
+				transform: rotate(-1deg);
+			}
+		}
+		@keyframes rocking {
+			to {
+				-webkit-transform: rotate(-1deg);
+				transform: rotate(-1deg);
+			}
+		}
+		@-webkit-keyframes ear-left {
+			85% {
+				-webkit-transform: rotate(30deg);
+				transform: rotate(30deg);
+			}
+			100% {
+				-webkit-transform: rotate(-10deg);
+				transform: rotate(-10deg);
+			}
+		}
+		@keyframes ear-left {
+			85% {
+				-webkit-transform: rotate(30deg);
+				transform: rotate(30deg);
+			}
+			100% {
+				-webkit-transform: rotate(-10deg);
+				transform: rotate(-10deg);
+			}
+		}
+		@-webkit-keyframes ear-right {
+			85% {
+				-webkit-transform: rotate(160deg);
+				transform: rotate(160deg);
+			}
+			100% {
+				-webkit-transform: rotate(170deg);
+				transform: rotate(170deg);
+			}
+		}
+		@keyframes ear-right {
+			85% {
+				-webkit-transform: rotate(160deg);
+				transform: rotate(160deg);
+			}
+			100% {
+				-webkit-transform: rotate(170deg);
+				transform: rotate(170deg);
+			}
+		}
+		@-webkit-keyframes leg-right {
+			to {
+				-webkit-transform: translateX(4px) rotate(2deg);
+				transform: translateX(4px) rotate(2deg);
+			}
+		}
+		@keyframes leg-right {
+			to {
+				-webkit-transform: translateX(4px) rotate(2deg);
+				transform: translateX(4px) rotate(2deg);
+			}
+		}
+		@-webkit-keyframes leg-left {
+			0% {
+				-webkit-transform: rotate(0deg) translateX(0px);
+				transform: rotate(0deg) translateX(0px);
+			}
+			50% {
+				-webkit-transform: rotate(5deg) translateX(3px);
+				transform: rotate(5deg) translateX(3px);
+			}
+		}
+		@keyframes leg-left {
+			0% {
+				-webkit-transform: rotate(0deg) translateX(0px);
+				transform: rotate(0deg) translateX(0px);
+			}
+			50% {
+				-webkit-transform: rotate(5deg) translateX(3px);
+				transform: rotate(5deg) translateX(3px);
+			}
+		}
+
+		.love {
+			background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/42764/heart-smil.svg);
+			display: inline-block;
+			height: 16px;
+			vertical-align: middle;
+			width: 16px;
+		}
+
+		.container {
+			background-color: white;
+			border-radius: 4px;
+			box-shadow: 0 1px 3px #dee2e6;
+			height: 300px;
+			margin: 40px auto 50px auto;
+			position: relative;
+			width: 450px;
+		}
+
+		.artboard {
+			height: 100%;
+			overflow: hidden;
+			position: relative;
+			width: 100%;
+		}
+
+		@-webkit-keyframes link {
+			25% {
+				-webkit-transform: rotate(10deg);
+				transform: rotate(10deg);
+			}
+			50% {
+				-webkit-transform: rotate(-10deg);
+				transform: rotate(-10deg);
+			}
+		}
+
+		@keyframes link {
+			25% {
+				-webkit-transform: rotate(10deg);
+				transform: rotate(10deg);
+			}
+			50% {
+				-webkit-transform: rotate(-10deg);
+				transform: rotate(-10deg);
+			}
+		}
+
+	</style>
+	<style type="text/css">
 .more { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAAAWdEVYdENyZWF0aW9uIFRpbWUAMDEvMDIvMTLltnQyAAAB1UlEQVQ4jYWTS04bQRCGv3q0x8gMYJCwknCGLDgLVwiH4grhLFaUXdhkQ0A8pBg/FOLpnmbhMYzxRKlNS1Vdf/31V5XknGnb+eXJCBjzbzu9OLu+azu845Opysej4wHmshF4uJ2TUrb3CV0gIBAKRboC5C2vdkDE9fdty6/xDegvXz+NgDbFUejZ+PjDgExmtpxS9vYwMe5u5iyX8RRoa5Ic+C4qx9KUN1MGu4E618yqJ5axAp44KA7ZL3eYzp/HKdVIw7WK8d6BuDvcod9TQlBEIOXEdPlElSoUJabIIs4Z7h9yNDwgqOMayLXw7epHVIBggrsgspZPUBQyiCgugRQji7TAVDF1XB2TlQoOYCqovkmpopS9fcoiM3ue0rOCYf8IU8NklWxiiOQ3EPXtWagIqo6KYWYEc4IGvMViA6RrnCJKVS9B8ypRHG1YKNa0Ur+C+MPt/I2BKWVZUO4FgvQ47PcptEDF+T2Z8TiZUMWIyGtpd+Bze5VTSqP57O/4YG+AN/RXbSiPkwmL5z/be/L+mM4vT2JKeUW7EXD1erMz/Lo4u77f0K9DDhdA1XG11jh9vWBb99Z9gAg5QZ2hzpmUa0RSW4f/gqSY0s3Vz+tufEjvHS8Tg6BXC7qVbQAAAABJRU5ErkJggg==)
 			no-repeat left center; width: 17px; height: 17px; display: inline-block; float: right; cursor: pointer; }
 .less { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAK6wAACusBgosNWgAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAAAWdEVYdENyZWF0aW9uIFRpbWUAMDEvMDIvMTLltnQyAAABuklEQVQ4ja2US25TQRBFT336OSEY5ESyBfEakNiLt0AW5S2QvQQxAiZIYBwSz/yByH7dxcB2bPMME+hJS/W5fetWVUtE8K/HfzdcXfdfqsr4onuGuRz4Jrdzcg6Gg9HfQYAxAqmlSMMlQJO5/oliE4AtQLcR++btZQ+wPVsvVXbTfXFGEMyWU9rVM0yMu/Gc5bJ+DdztxWcH3otKVzbPmyq5LnwfzSgEBMxlhqJEBFWVKKUgG66rur53oH7aOeWkUlJSRCBHZracssorlLXttHpCpzonaYukjmsiivDu08daAZIJ7oLIVg9BUQgQUVwSua5Z5AWmiqnj6pisVXAAU0F1J6WK0q6e024Fs4cplbXonFxgapisk00MkdiBqDd7oSKoOiqGmZHMSZrwPRYHIMfaKaKsyhI01oni6IaFYptSyiOIT27nOwaq5FyQrUAIC/nBhK+UErRSos55z4878CrneJyTnHOvquymf3mOb+hvy/jw+QuLh5/NORkORvsGrq77dc6xpr0RcH07y3oF8G04GN0f6HdEDhdA1XG1vXb6dsAa+3Z8AREiQwkoEeQoiBzocHDkf/wnvwC5IpRVsUDNUgAAAABJRU5ErkJggg==)
@@ -6390,7 +9877,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 #seedpoolarea { display: none; }
 #seedpooldisplay {  font-family: monospace; font-size: 1em; width: 640px; padding: 15px 5px; word-wrap: break-word; }
 .seedpoint { width: 6px; height: 6px; display: block; border-radius: 3px; background-color: #009900; position: absolute; z-index: 10; }
-#generate { font-family: monospace; font-size: 1.25em; height: 305px; text-align: left; position: relative; padding: 5px; border: 2px solid #009900; clear: both; }
+#generate { font-family: monospace; font-size: 1.25em; height: 605px; text-align: left; position: relative; padding: 5px; border: 2px solid #009900; clear: both; }
 #generate span { padding: 5px 5px 0 5px; }
 #generatekeyinput { position: relative; z-index: 20; }
 #keyarea { height: 250px; }
@@ -6411,7 +9898,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 		
 #paperarea { min-height: 120px; display: none; }
 #paperarea .keyarea { border: 2px solid #009900; border-top: 0; }
-#paperarea .keyarea.art { display: block; height: auto; border: 0; font-family: Ubuntu, Arial; padding: 0; margin: 0; }
+#paperarea .keyarea.art { display: block; height: auto; border: 0; font-family: Ubuntu, Arial; padding: 0; margin: 0 auto; width: 486px }
 #paperarea .artwallet .papersvg { width: 486px; height: 261px; border: 0; margin: 0; padding: 0; left: 0; }
 #paperarea .artwallet .qrcode_public { top: 52px; left: 17px; z-index: 100; margin: 0; float: none; display: block; position: absolute; background-color: #FFFFFF; 
 		                                padding: 5px 5px 2px 5px; } 
@@ -6637,8 +10124,213 @@ input[type=checkbox] { position: relative; z-index: 20; }
 		<div id="generate">
 			<span id="generatelabelbitcoinaddress">Generating Bitcoin Address...</span><br />
 			<span id="generatelabelmovemouse">MOVE your mouse around to add some extra randomness... </span><span id="mousemovelimit"></span><br />
-			<span id="generatelabelkeypress">OR type some random characters into this textbox</span> <input type="text" id="generatekeyinput" onkeydown="ninja.seeder.seedKeyPress(event);" /><br />
+			<span style="display:none;" id="generatelabelkeypress">OR type some random characters into this textbox</span> <input style="display:none;" type="text" id="generatekeyinput" onkeydown="ninja.seeder.seedKeyPress(event);" /><br />
 			<div id="seedpooldisplay"></div>
+
+
+
+			<div class="container">
+				<div class="artboard">
+					<div class="deer">
+						<div class="rocking">
+							<div class="head">
+								<div class="horns">
+									<div class="horn horn-left">
+										<div class="line line-one"></div>
+										<div class="line"></div>
+										<div class="line line-three"></div>
+									</div>
+									<div class="horn horn-right">
+										<div class="line line-one"></div>
+										<div class="line"></div>
+										<div class="line line-three"></div>
+									</div>
+								</div>
+								<div class="ears">
+									<div class="ear ear-left"></div>
+									<div class="ear ear-right"></div>
+								</div>
+								<div class="eyes">
+									<div class="eye eye-left"></div>
+									<div class="eye eye-right"></div>
+								</div>
+								<div class="nose"></div>
+							</div>
+							<div class="body">
+								<div class="shadow"></div>
+								<div class="hooves">
+									<div class="hoof-one">
+										<div class="line"></div>
+										<div class="anim-part">
+											<div class="circle">
+												<div class="circle">
+													<div class="circle">
+														<div class="circle">
+															<div class="circle circle-last"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="hoof-two">
+										<div class="line-one"></div>
+										<div class="line-two"></div>
+									</div>
+								</div>
+							</div>
+							<div class="tail">
+								<div class="circle">
+									<div class="circle">
+										<div class="circle">
+											<div class="circle">
+												<div class="circle"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="legs">
+							<div class="leg-left">
+								<div class="anim-part">
+									<div class="line"></div>
+								</div>
+							</div>
+							<div class="leg-right">
+								<div class="anim-part">
+									<div class="circle">
+										<div class="circle">
+											<div class="circle">
+												<div class="circle">
+													<div class="circle">
+														<div class="circle">
+															<div class="circle">
+																<div class="circle">
+																	<div class="circle circle-last"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="presents">
+						<div class="present present-one"></div>
+						<div class="present present-two"></div>
+						<div class="present present-two present-two-right"></div>
+						<div class="present present-three"></div>
+					</div>
+					<div class="snow"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+					<div class="snowflake"></div>
+				</div>
+			</div>
+
+
+
 		</div>
 
 		<div id="wallets">
@@ -8344,12 +12036,12 @@ ninja.foreachSerialized = function (collection, whatToDo, onComplete) {
 		"vanityalertinvalidinputprivatekeysmatch": "Entrada no válida. La clave privada de ambos coincidan entradas. Debe introducir dos claves diferentes.",
 
 		// header and menu html
-		"tagline": "Generador de carteras Bitcoin de código abierto en lado de cliente con Javascript",
+		"tagline": "Para estas fiestas el mejor regalo de Navidad es el que menos te imaginabas",
 		"generatelabelbitcoinaddress": "Generando dirección Bitcoin...",
-		"generatelabelmovemouse": "Mueve un poco el ratón para crear entropía...",
+		"generatelabelmovemouse": "<b>Mueve un poco el ratón</b> para crear entropía...",
 		"generatelabelkeypress": "O escribe algunos caracteres aleatorios en el campo de texto", //TODO: please translate
-		"singlewallet": "Una sola cartera",
-		"paperwallet": "Cartera en papel",
+		"singlewallet": "Una sola billetera",
+		"paperwallet": "Billetera en papel",
 		"bulkwallet": "Direcciones en masa",
 		"brainwallet": "Cartera mental",
 		"vanitywallet": "Cartera personalizada",
@@ -8424,10 +12116,10 @@ ninja.foreachSerialized = function (collection, whatToDo, onComplete) {
 		"bulklabelcsv": "Valores separados por coma:",
 		"bulklabelformat": "Índice,Dirección,Clave privada (formato para importar)",
 		"bulklabelq1": "¿Por qué debo usar \"Direcciones en masa\" para aceptar Bitcoins en mi web?",
-		"bulka1": "La forma tradicional de aceptar bitcoins en tu web requiere tener instalado el cliente oficial de bitcoin (\"bitcoind\"). Sin embargo muchos servicios de hosting no permiten instalar dicho cliente. Además, ejecutar el cliente en tu servidor supone que las claves privadas están también en el servidor y podrían ser comprometidas en caso de intrusión. Al usar este mecanismo, puedes subir al servidor sólo las dirección de bitcoin y no las claves privadas. De esta forma no te tienes que preocupar de que alguien robe la cartera si se cuelan en el servidor.",
+		"bulka1": "La forma tradicional de aceptar bitcoins en tu web requiere tener instalado el cliente oficial de bitcoin (\"bitcoind\"). Sin embargo muchos servicios de hosting no permiten instalar dicho cliente. Además, ejecutar el cliente en tu servidor supone que las claves privadas están también en el servidor y podrían ser comprometidas en caso de intrusión. Al usar este mecanismo, puedes subir al servidor sólo las dirección de bitcoin y no las claves privadas. De esta forma no te tienes que preocupar de que alguien robe la billetera si se cuelan en el servidor.",
 		"bulklabelq2": "¿Cómo uso \"Direcciones en masa\" para aceptar bitcoins en mi web?",
 		"bulklabela2li1": "Usa el tab \"Direcciones en masa\" para generar por anticipado muchas direcciones (más de 10000). Copia y pega la lista de valores separados por comas (CSV) a un archivo de texto seguro (cifrado) en tu ordenador. Guarda una copia de seguridad en algún lugar seguro.",
-		"bulklabela2li2": "Importa las direcciones en la base de datos de tu servidor. No subas la cartera ni las claves públicas, o de lo contrario te lo pueden robar. Sube sólo las direcciones, ya que es lo que se va a mostrar a los clientes.",
+		"bulklabela2li2": "Importa las direcciones en la base de datos de tu servidor. No subas la billetera ni las claves públicas, o de lo contrario te lo pueden robar. Sube sólo las direcciones, ya que es lo que se va a mostrar a los clientes.",
 		"bulklabela2li3": "Ofrece una alternativa en el carro de la compra de tu web para que los clientes paguen con Bitcoin. Cuando el cliente elija pagar con Bitcoin, les muestras una de las direcciones de la base de datos como su \"dirección de pago\" y guardas esto junto con el pedido.",
 		"bulklabela2li4": "Ahora te hace falta recibir una notificación del pago. Busca en google \"notificación de pagos bitcoin\" (o \"bitcoin payment notification\" en inglés) y suscríbete a alguno de los servicios que aparezcan. Hay varios de ellos, que te pueden notificar vía Web services, API, SMS, email, etc. Una vez te llegue la notificación, lo cual puede ser automatizado, entonces ya puedes procesar el pedido. Para comprobar a mano si has recibido un pago, puedes usar Block Explorer: reemplaza DIRECCION a continuación por la dirección que estés comprobando. La transacción puede tardar entre 10 minutos y una hora en ser confirmada. <br />http://www.blockexplorer.com/address/DIRECCION<br /><br />Puedes ver las transacciones sin confirmar en: http://blockchain.info/ <br />Las transacciones sin confirmar suelen aparecer ahí en unos 30 segundos.",
 		"bulklabela2li5": "Las bitcoins que recibas se almacenarán de forma segura en la cadena de bloques. Usa la cartera original que generaste en el paso 1 para usarlas.",
@@ -8470,7 +12162,7 @@ ninja.foreachSerialized = function (collection, whatToDo, onComplete) {
 		"detailview": "Ver detalles",
 		"detailprint": "Imprimir",
 		"detaillabelnote1": "Tu clave privada es un número secreto, único, que sólo tú conoces. Se puede expresar en varios formatos. Aquí abajo mostramos la dirección y la clave pública que se corresponden con tu clave privada, así como la clave privada en los formatos más conocidos (para importar, hex, base64 y mini).",
-		"detaillabelnote2": "Bitcoin v0.6+ almacena las claves públicas comprimidas. El cliente también soporta importar/exportar claves privadas usando importprivkey/dumpprivkey. El formato de las claves privadas exportadas depende de si la dirección se generó en una cartera antigua o nueva.",
+		"detaillabelnote2": "Bitcoin v0.6+ almacena las claves públicas comprimidas. El cliente también soporta importar/exportar claves privadas usando importprivkey/dumpprivkey. El formato de las claves privadas exportadas depende de si la dirección se generó en una billetera antigua o nueva.",
 		"detaillabelbitcoinaddress": "Dirección Bitcoin:",
 		"detaillabelbitcoinaddresscomp": "Dirección Bitcoin (comprimida):",
 		"detaillabelpublickey": "Clave pública (130 caracteres [0-9A-F]):",
@@ -9269,10 +12961,10 @@ ninja.foreachSerialized = function (collection, whatToDo, onComplete) {
 		"bulklabelcsv": "Valores separados por vírgula:",
 		"bulklabelformat": "Índice,Endereço,Chave privada (formato para importar)",
 		"bulklabelq1": "¿Por qué debo usar \"Direcciones en masa\" para aceptar Bitcoins en mi web?",
-		"bulka1": "La forma tradicional de aceptar bitcoins en tu web requiere tener instalado el cliente oficial de bitcoin (\"bitcoind\"). Sin embargo muchos servicios de hosting no permiten instalar dicho cliente. Además, ejecutar el cliente en tu servidor supone que las claves privadas están también en el servidor y podrían ser comprometidas en caso de intrusión. Al usar este mecanismo, puedes subir al servidor sólo las dirección de bitcoin y no las claves privadas. De esta forma no te tienes que preocupar de que alguien robe la cartera si se cuelan en el servidor.",
+		"bulka1": "La forma tradicional de aceptar bitcoins en tu web requiere tener instalado el cliente oficial de bitcoin (\"bitcoind\"). Sin embargo muchos servicios de hosting no permiten instalar dicho cliente. Además, ejecutar el cliente en tu servidor supone que las claves privadas están también en el servidor y podrían ser comprometidas en caso de intrusión. Al usar este mecanismo, puedes subir al servidor sólo las dirección de bitcoin y no las claves privadas. De esta forma no te tienes que preocupar de que alguien robe la billetera si se cuelan en el servidor.",
 		"bulklabelq2": "¿Cómo uso \"Direcciones en masa\" para aceptar bitcoins en mi web?",
 		"bulklabela2li1": "Usa el tab \"Direcciones en masa\" para generar por anticipado muchas direcciones (más de 10000). Copia y pega la lista de valores separados por comas (CSV) a un archivo de texto seguro (cifrado) en tu ordenador. Guarda una copia de seguridad en algún lugar seguro.",
-		"bulklabela2li2": "Importa las direcciones en la base de datos de tu servidor. No subas la cartera ni las claves públicas, o de lo contrario te lo pueden robar. Sube sólo las direcciones, ya que es lo que se va a mostrar a los clientes.",
+		"bulklabela2li2": "Importa las direcciones en la base de datos de tu servidor. No subas la billetera ni las claves públicas, o de lo contrario te lo pueden robar. Sube sólo las direcciones, ya que es lo que se va a mostrar a los clientes.",
 		"bulklabela2li3": "Ofrece una alternativa en el carro de la compra de tu web para que los clientes paguen con Bitcoin. Cuando el cliente elija pagar con Bitcoin, les muestras una de las direcciones de la base de datos como su \"dirección de pago\" y guardas esto junto con el pedido.",
 		"bulklabela2li4": "Ahora te hace falta recibir una notificación del pago. Busca en google \"notificación de pagos bitcoin\" (o \"bitcoin payment notification\" en inglés) y suscríbete a alguno de los servicios que aparezcan. Hay varios de ellos, que te pueden notificar vía Web services, API, SMS, email, etc. Una vez te llegue la notificación, lo cual puede ser automatizado, entonces ya puedes procesar el pedido. Para comprobar a mano si has recibido un pago, puedes usar Block Explorer: reemplaza DIRECCION a continuación por la dirección que estés comprobando. La transacción puede tardar entre 10 minutos y una hora en ser confirmada. <br />http://www.blockexplorer.com/address/DIRECCION<br /><br />Puedes ver las transacciones sin confirmar en: http://blockchain.info/ <br />Las transacciones sin confirmar suelen aparecer ahí en unos 30 segundos.",
 		"bulklabela2li5": "Las bitcoins que recibas se almacenarán de forma segura en la cadena de bloques. Usa la cartera original que generaste en el paso 1 para usarlas.",
