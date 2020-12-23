@@ -1,0 +1,5 @@
+{
+    "require": {
+        "phpmussel/phpmailer": "^3.1"
+    }
+}
