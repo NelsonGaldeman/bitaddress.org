@@ -18,6 +18,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']))
     $mail->Username = $SMTP_USER;
     $mail->Password = $SMTP_PASSWORD;
     $mail->Port = $SMTP_PORT;
+    $mail->SMTPSecure = 'tls';
 
     $mail->setFrom($SMTP_USER, 'Regalale Bitcoins');
     $mail->addAddress('nelsongaldeman@gmail.com', 'Nelson Galdeman');
