@@ -1,10 +1,6 @@
 <?php
 
-require ('vendor/vlucas/phpdotenv/src/Dotenv.php');
-require ('vendor/vlucas/phpdotenv/src/Repository/RepositoryBuilder.php');
-require('vendor/phpmailer/phpmailer/src/PHPMailer.php');
-require('vendor/phpmailer/phpmailer/src/Exception.php');
-require('vendor/phpmailer/phpmailer/src/SMTP.php');
+require_once 'vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
