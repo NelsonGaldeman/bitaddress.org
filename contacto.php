@@ -1,26 +1,34 @@
 <?php
+require('vendor/phpmailer/phpmailer/src/PHPMailer.php');
+require('vendor/phpmailer/phpmailer/src/Exception.php');
+require('vendor/phpmailer/phpmailer/src/SMTP.php');
+
 use PHPMailer\PHPMailer\PHPMailer;
-$mail = new PHPMailer();
 
-$mail->isSMTP();
-$mail->Host = getenv('SMTP_SERVER');
-$mail->SMTPAuth = true;
-$mail->Username = getenv('SMTP_USER');
-$mail->Password = getenv('SMTP_PASSWORD');
-$mail->Port = getenv('SMTP_PORT');
+if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])) {
 
-$mail->setFrom(getenv('SMTP_USER'), 'Regalale Bitcoins');
-$mail->addAddress('nelsongaldeman@gmail.com', 'Nelson Galdeman');
+    $mail = new PHPMailer();
 
-$mail->Subject = 'Contacto de Regalale Bitcoins';
+    $mail->isSMTP();
+    $mail->Host = getenv('SMTP_SERVER');
+    $mail->SMTPAuth = true;
+    $mail->Username = getenv('SMTP_USER');
+    $mail->Password = getenv('SMTP_PASSWORD');
+    $mail->Port = getenv('SMTP_PORT');
 
-$mail->Body = $_POST['name']."\n".$_POST['email']."\n\n".$_POST['message'];
+    $mail->setFrom(getenv('SMTP_USER'), 'Regalale Bitcoins');
+    $mail->addAddress('nelsongaldeman@gmail.com', 'Nelson Galdeman');
 
-if($mail->send()){
-    $sent = true;
-}else{
-    $sent = false;
-};
+    $mail->Subject = 'Contacto de Regalale Bitcoins';
+
+    $mail->Body = $_POST['name']."\n".$_POST['email']."\n\n".$_POST['message'];
+
+    if($mail->send()){
+        $sent = true;
+    }else{
+        $sent = false;
+    };
+}
 
 ?>
 <!doctype html>
