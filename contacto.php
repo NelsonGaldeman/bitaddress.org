@@ -142,7 +142,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']))
         #singlesafety { text-align: left; padding: 5px; border-top: 2px solid #009900; top: -25px; position: relative; }
 
         #main { position: relative; text-align: center; margin: 0px auto; width: 808px; }
-        #logo { width: 578px; height: 80px; }
+        #logo { width: 400px; }
 
         #paperarea { min-height: 120px; display: none; }
         #paperarea .keyarea { border: 2px solid #009900; border-top: 0; }
