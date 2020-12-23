@@ -1,7 +1,12 @@
 <?php
+
+require ('vendor/vlucas/phpdotenv/src/Dotenv.php');
 require('vendor/phpmailer/phpmailer/src/PHPMailer.php');
 require('vendor/phpmailer/phpmailer/src/Exception.php');
 require('vendor/phpmailer/phpmailer/src/SMTP.php');
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 use PHPMailer\PHPMailer\PHPMailer;
 
