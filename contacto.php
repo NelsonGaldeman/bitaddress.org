@@ -341,7 +341,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']))
 <body>
 <div id="busyblock"></div>
 <div id="main">
-    <a href=""><img alt="Regalale Bitcoins | El mejor regalo para las fiestas" title="Regalale Bitcoins | El mejor regalo para las fiestas" id="logo" src="https://i.postimg.cc/6553pm9K/LOGOS-04.png" /></a>
+    <a href="/"><img alt="Regalale Bitcoins | El mejor regalo para las fiestas" title="Regalale Bitcoins | El mejor regalo para las fiestas" id="logo" src="https://i.postimg.cc/6553pm9K/LOGOS-04.png" /></a>
     <div id="tagline">El mejor regalo para las fiestas</div>
 
     <div id="generate">
