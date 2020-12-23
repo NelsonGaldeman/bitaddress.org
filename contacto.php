@@ -1,6 +1,7 @@
 <?php
 
 require_once 'vendor/autoload.php';
+include 'config.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -12,13 +13,13 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']))
     $mail = new PHPMailer();
 
     $mail->isSMTP();
-    $mail->Host = getenv('SMTP_SERVER');
+    $mail->Host = $SMTP_SERVER;
     $mail->SMTPAuth = true;
-    $mail->Username = getenv('SMTP_USER');
-    $mail->Password = getenv('SMTP_PASSWORD');
-    $mail->Port = getenv('SMTP_PORT');
+    $mail->Username = $SMTP_USER;
+    $mail->Password = $SMTP_PASSWORD;
+    $mail->Port = $SMTP_PORT;
 
-    $mail->setFrom(getenv('SMTP_USER'), 'Regalale Bitcoins');
+    $mail->setFrom($SMTP_USER, 'Regalale Bitcoins');
     $mail->addAddress('nelsongaldeman@gmail.com', 'Nelson Galdeman');
 
     $mail->Subject = 'Contacto de Regalale Bitcoins';

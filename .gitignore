@@ -8,3 +8,4 @@ node_modules
 /.nuget
 vendor
 .env
+config.php
