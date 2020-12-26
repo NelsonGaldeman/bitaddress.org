@@ -23,7 +23,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']))
     $mail->setFrom($SMTP_USER, 'Regalale Bitcoins');
     $mail->addAddress('nelsongaldeman@gmail.com', 'Nelson Galdeman');
 
-    $mail->Subject = 'Contacto de Regalale Bitcoins';
+    $mail->Subject = 'Contacto de Regalale Bitcoins - #'.rand(1000000,9999999);
 
     $mail->Body = $_POST['name']."\n".$_POST['email']."\n\n".$_POST['message'];
 
