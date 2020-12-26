@@ -10,6 +10,25 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])) {
 
+    $url = 'https://www.google.com/recaptcha/api/siteverify';
+    $data = array(
+        'secret' => $recaptchaKey,
+        'response' => $_POST["g-recaptcha-response"]
+    );
+    $options = array(
+        'http' => array (
+            'method' => 'POST',
+            'content' => http_build_query($data)
+        )
+    );
+    $context  = stream_context_create($options);
+    $verify = file_get_contents($url, false, $context);
+    $captcha_success = json_decode($verify);
+
+    if ($captcha_success->success==false) {
+        exit();
+    }
+
     $mail = new PHPMailer();
 
     $mail->isSMTP();
@@ -49,8 +68,12 @@ $content .= '
     <input type="text" name="email" style="width: 300px"/><br><br>
     <span>Mensaje</span><br>
     <textarea name="message" style="width: 300px; height: 250px;"></textarea><br><br>
+    <div class="g-recaptcha" data-sitekey="6Lf6xhUaAAAAAK7RIq_F8O0tMBLWS6FdMQ0hJgWe"></div>
+    <br><br>
     <input type="submit" value="Enviar"/>
 </form>
 ';
+
+define('CONTACT', true);
 
 include('contenido.php');

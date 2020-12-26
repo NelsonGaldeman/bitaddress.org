@@ -48,6 +48,12 @@
     <title>Regalale Bitcoins | El mejor regalo para las fiestas</title>
     <meta charset="utf-8">
 
+    <?php
+    if (defined('CONTACT')){
+        echo '<script src="https://www.google.com/recaptcha/api.js" async defer></script>';
+    }
+    ?>
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZM6SH1NYM"></script>
     <script>
