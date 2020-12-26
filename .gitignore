@@ -9,3 +9,5 @@ node_modules
 vendor
 .env
 config.php
+.idea/
+.DS_Store
