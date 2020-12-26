@@ -155,6 +155,7 @@
             -o-transform-origin:top left;      -o-transform:rotate(-90deg);
             transform-origin:top left;         transform:rotate(-90deg);
         }
+        .g-recaptcha { width: 300px; margin: auto; }
         #bulkarea .body { padding: 5px 0 0 0; }
         #bulkarea .format { font-style: italic; font-size: 90%; }
         #bulktextarea { font-size: 90%; width: 98%; margin: 4px 0 0 0; }
